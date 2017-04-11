@@ -1,0 +1,1119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebTest Name="UpdateDatasourceRemarks" Id="910517b6-80b3-42f8-a83d-6761c24ed20f" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="{{UserCredList.Credentials#csv.domainname}}" CredentialPassword="zmDrQp5BjhENl5Ey7E0pgx7mW7TN0yOlE2Qxh2ZUtz0HVP4qW744vkv55pcDHnWX" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="WebTest4.9c4453d2-c45a-43ad-be7e-8df2c331e741.rec.webtestresult" ResultsLocale="">
+  <Items>
+    <Request Method="GET" Guid="d47d2c55-a3ee-4d6d-9d3d-b323e4a23e7b" Version="1.1" Url="{{EISWebServer}}/" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False" />
+    <Request Method="GET" Guid="1184e430-762c-491c-9184-4ab7404275b0" Version="1.1" Url="{{EISWebServer}}/" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam1.Enter" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="Enter" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+    </Request>
+    <Request Method="POST" Guid="eff5a70d-9720-4615-b07e-03e6fb794476" Version="1.1" Url="{{EISWebServer}}/Home/SplashEnter" ThinkTime="3" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{EISWebServer}}/Home/MyEIS" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{EISWebServer}}/" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="RedirectURL" Value="{{$HIDDEN1.RedirectURL}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Enter" Value="I Agree" RecordedValue="I Agree" CorrelationBinding="{{FormPostParam1.Enter}}" UrlEncode="True" />
+        <FormPostParameter Name="DXScript" Value="1_142,1_80,1_135,1_91,14_0,1_98,1_104,1_105,1_101,1_84,1_109,14_23,1_92,14_1,1_77,1_128,1_126,1_94,1_97,1_95,1_96,1_106,14_4,1_100,1_117,1_103,14_12,14_13,1_102,1_129,1_107,1_90,1_137,1_114,1_113,14_10,1_133,1_119,1_127,14_16" RecordedValue="1_142,1_80,1_135,1_91,14_0,1_98,1_104,1_105,1_101,1_84,1_109,14_23,1_92,14_1,1_77,1_128,1_126,1_94,1_97,1_95,1_96,1_106,14_4,1_100,1_117,1_103,14_12,14_13,1_102,1_129,1_107,1_90,1_137,1_114,1_113,14_10,1_133,1_119,1_127,14_16" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="798893f8-dd82-4122-bc64-8a35952f9991" Version="1.1" Url="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="POST" Guid="45149d26-8e05-4805-a506-cf9a3ec2524b" Version="1.1" Url="{{EISWebServer}}/EIRManagement/EIRButtonStatus/" ThinkTime="10" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=4109076" />
+            <Header Name="accept" Value="application/json, text/javascript, */*; q=0.01" />
+            <Header Name="x-requested-with" Value="XMLHttpRequest" />
+          </Headers>
+          <StringHttpBody ContentType="application/json; charset=utf-8" InsertByteOrderMark="False">ewAiAEUASQBTAEkAbgB2AGUAcwB0AGkAZwBhAHQAaQBvAG4ASQBkACIAOgAiADQAMQAwADkAMAA3ADYAIgB9AA==</StringHttpBody>
+        </Request>
+      </DependentRequests>
+      <Headers>
+        <Header Name="Referer" Value="{{EISWebServer}}/Home/MyEIS" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam2.EditableButtonDialog" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value=" == &quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; || " />
+            <RuleParameter Name="Index" Value="13" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam3.LegalCounselReceiptDate" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="72" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam4.HasValidationError" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="7" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam5._LegalEventPartialGrid_DXFREditorcol1_Raw" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="THE &quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; NUM" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam6._LegalEventPartialGrid_DXPagerBottom_PSPSI" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam7.CurrentDatetime" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="72" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam8.EditableButtonDialog" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value=" == &quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; || " />
+            <RuleParameter Name="Index" Value="13" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam9.RegionalOfficeSigningMinDate" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="2" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam10.DocumentFormatCodeDropDown_Value" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="e = &quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;;&#xD;&#xA; " />
+            <RuleParameter Name="Index" Value="1" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam11.LegalCounselReceiptDateReadOnly" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="2" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam12.LegalCounselActionDate" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="2" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam13._LegalEventRegulationViolatedPartialGrid_DXPagerBottom_PSPSI" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam14._LegalEventRegulationViolatedPartialGrid$DXKVInput" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="143" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam15.LegalEventRemarks" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="e = &quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;;&#xD;&#xA; " />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam38._LegalEventPartialGrid_DXFREditorcol1_Raw" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="THE &quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; NUM" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam39._LegalEventPartialGrid_DXPagerBottom_PSPSI" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam40.EditableButtonDialog" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value=" == &quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; || " />
+            <RuleParameter Name="Index" Value="13" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <QueryStringParameters>
+        <QueryStringParameter Name="EIRNo" Value="{{EIRList.EIRNumbersList#csv.EIRNumber}}" RecordedValue="4109076" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="b1a4c7c4-b05d-4844-81da-b278d735bca8" Version="1.1" Url="{{EISWebServer}}/EIRManagement/EditEIR/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=4109076" />
+        <Header Name="accept" Value="application/json, text/javascript, */*; q=0.01" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <StringHttpBody ContentType="application/json; charset=utf-8" InsertByteOrderMark="False">ewAiAEUASQBSAE4AbwAiADoAIgA0ADEAMAA5ADAANwA2ACIAfQA=</StringHttpBody>
+    </Request>
+    <Request Method="POST" Guid="c90d19fc-3eb9-49d5-97e1-70feff039350" Version="1.1" Url="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=4109076" />
+        <Header Name="accept" Value="*/*" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam24.r" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?r=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="48" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam27.r" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?r=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="48" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam32.r" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?r=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="48" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <QueryStringParameters>
+        <QueryStringParameter Name="EIRNo" Value="4109076" RecordedValue="4109076" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="Saved" Value="3" RecordedValue="3" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="ViolationDate" Value="9/1/2016" RecordedValue="9/1/2016" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+      <StringHttpBody ContentType="" InsertByteOrderMark="False">
+      </StringHttpBody>
+    </Request>
+    <Request Method="GET" Guid="abe8bb83-f492-4e6f-b515-e6cef25d4934" Version="1.1" Url="{{EISWebServer}}/DXR.axd" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=4109076" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="r" Value="1_124-g0V37" RecordedValue="1_124-g0V37" CorrelationBinding="{{QueryStringParam24.r}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="240aa7e7-f9ca-4450-bfe5-c47201767b34" Version="1.1" Url="{{EISWebServer}}/DXR.axd" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=4109076" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="r" Value="1_124-g0V37" RecordedValue="1_124-g0V37" CorrelationBinding="{{QueryStringParam27.r}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="cc7d23e9-c212-41d6-bb82-de15429ba7fb" Version="1.1" Url="{{EISWebServer}}/DXR.axd" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=4109076" />
+        <Header Name="accept" Value="text/javascript, application/javascript, application/ecmascript, application/x-ecmascript, */*; q=0.01" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="r" Value="1_124-g0V37" RecordedValue="1_124-g0V37" CorrelationBinding="{{QueryStringParam32.r}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="_" Value="1473981387522" RecordedValue="1473981387522" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="353c5cb3-c36a-437b-b2ee-d4f8d405f42e" Version="1.1" Url="{{EISWebServer}}/EIRManagement/GetInvestigationOfficeDescription" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=4109076" />
+        <Header Name="accept" Value="*/*" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="OfficeId" Value="8840" RecordedValue="8840" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+      <StringHttpBody ContentType="application/json" InsertByteOrderMark="False">
+      </StringHttpBody>
+    </Request>
+    <Request Method="POST" Guid="cd2073f9-39f3-472e-8f5a-8bb4dc9a1d65" Version="1.1" Url="{{EISWebServer}}/EIRManagement/EIRButtonStatus/" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=4109076" />
+        <Header Name="accept" Value="application/json, text/javascript, */*; q=0.01" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <StringHttpBody ContentType="application/json; charset=utf-8" InsertByteOrderMark="False">ewAiAEUASQBTAEkAbgB2AGUAcwB0AGkAZwBhAHQAaQBvAG4ASQBkACIAOgAiADQAMQAwADkAMAA3ADYAIgB9AA==</StringHttpBody>
+    </Request>
+    <Request Method="POST" Guid="cb7aba41-26b0-4311-ad12-c4574a542a6a" Version="1.1" Url="{{EISWebServer}}/EIRManagement/ShowLegalEventDialog" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=4109076" />
+        <Header Name="accept" Value="*/*" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam51.r" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?r=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="24" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam54.r" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?r=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="24" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam59.r" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?r=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="24" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam69.LegalEventID" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?LegalEventID=" />
+            <RuleParameter Name="EndsWith" Value="&amp;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam70.EditableButtonDialog" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&amp;amp;EditableButtonDialog=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam35._LegalEventPartialGrid$DXFREditorcol1" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; id=" />
+            <RuleParameter Name="Index" Value="8" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam36._LegalEventPartialGrid_DXFREditorcol1_DDD_C_FNPWS" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="10" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam37._LegalEventPartialGrid$CallbackState" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="28" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam49.DXCallbackName" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue(&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;, &quot;a" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam50._LegalEventPartialGrid$DXFREditorcol1" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; id=" />
+            <RuleParameter Name="Index" Value="8" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam51._LegalEventPartialGrid_DXFREditorcol1_DDD_C_FNPWS" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="10" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam52._LegalEventPartialGrid$CallbackState" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="28" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <QueryStringParameters>
+        <QueryStringParameter Name="EISInvestigationID" Value="{{$HIDDEN1.EISInvestigationID}}" RecordedValue="4109076" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="EditableButtonDialog" Value="True" RecordedValue="True" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+      <StringHttpBody ContentType="application/json" InsertByteOrderMark="False">
+      </StringHttpBody>
+    </Request>
+    <Request Method="GET" Guid="bf193524-c8c5-4e93-826f-714f5a8e7428" Version="1.1" Url="{{EISWebServer}}/DXR.axd" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=4109076" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="r" Value="1_124-g0V37" RecordedValue="1_124-g0V37" CorrelationBinding="{{QueryStringParam51.r}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="450d4dac-0e86-4b04-96e0-cb2ca50a122a" Version="1.1" Url="{{EISWebServer}}/DXR.axd" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=4109076" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="r" Value="1_124-g0V37" RecordedValue="1_124-g0V37" CorrelationBinding="{{QueryStringParam54.r}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="208260d8-7c46-4ece-b6fe-99b49e0df6ff" Version="1.1" Url="{{EISWebServer}}/DXR.axd" ThinkTime="14" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=4109076" />
+        <Header Name="accept" Value="text/javascript, application/javascript, application/ecmascript, application/x-ecmascript, */*; q=0.01" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="r" Value="1_124-g0V37" RecordedValue="1_124-g0V37" CorrelationBinding="{{QueryStringParam59.r}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="_" Value="1473981392351" RecordedValue="1473981392351" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="9bac069a-fbb0-4834-8014-2c02305daa2d" Version="1.1" Url="{{EISWebServer}}/EIRManagement/_LegalEventAddEdit" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=4109076" />
+        <Header Name="accept" Value="*/*" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam26.IndexNumber" DisplayName="Extract Text" Description="Extract text from the response and place it into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="6" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam73.r" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?r=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="14" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam76.r" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?r=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="14" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam81.r" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?r=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="14" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam16._LegalEventPartialGrid_DXFREditorcol1_DDDWS" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="124" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam17._LegalEventPartialGrid$DXFREditorcol2" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; id=" />
+            <RuleParameter Name="Index" Value="129" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam18._LegalEventPartialGrid$DXFREditorcol3" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; id=" />
+            <RuleParameter Name="Index" Value="129" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam19._LegalEventPartialGrid$DXFREditorcol4" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; id=" />
+            <RuleParameter Name="Index" Value="129" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam20._LegalEventPartialGrid$DXFREditorcol5" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; id=" />
+            <RuleParameter Name="Index" Value="129" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam21._LegalEventPartialGrid$DXFREditorcol6" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; id=" />
+            <RuleParameter Name="Index" Value="129" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam22._LegalEventPartialGrid$DXFREditorcol7" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; id=" />
+            <RuleParameter Name="Index" Value="129" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam23._LegalEventPartialGrid$DXFREditorcol8" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; id=" />
+            <RuleParameter Name="Index" Value="129" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam24.LegalEventID" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="2" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam25.FutureDatetime" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="3" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam27.HiddenLegalEventActionSanctionList" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="9" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam28.LegalEventCodeDropDown_Value" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; sel" />
+            <RuleParameter Name="Index" Value="22" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam29._LegalEventActionSanctionPartialGrid$CallbackState" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="123" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam30.ddlRegulationCodes_Value_DDDWS" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="124" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam31._LegalEventRegulationViolatedPartialGrid$DXFREditorcol0" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; id=" />
+            <RuleParameter Name="Index" Value="129" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam32._LegalEventRegulationViolatedPartialGrid$DXFREditorcol1" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; id=" />
+            <RuleParameter Name="Index" Value="129" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam33._LegalEventRegulationViolatedPartialGrid$DXFREditorcol2" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; id=" />
+            <RuleParameter Name="Index" Value="129" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam34._LegalEventRegulationViolatedPartialGrid$CallbackState" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="137" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam41._LegalEventPartialGrid_DXFREditorcol1_DDDWS" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="124" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam42._LegalEventPartialGrid$DXFREditorcol2" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; id=" />
+            <RuleParameter Name="Index" Value="129" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam43._LegalEventPartialGrid$DXFREditorcol3" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; id=" />
+            <RuleParameter Name="Index" Value="129" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam44._LegalEventPartialGrid$DXFREditorcol4" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; id=" />
+            <RuleParameter Name="Index" Value="129" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam45._LegalEventPartialGrid$DXFREditorcol5" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; id=" />
+            <RuleParameter Name="Index" Value="129" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam46._LegalEventPartialGrid$DXFREditorcol6" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; id=" />
+            <RuleParameter Name="Index" Value="129" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam47._LegalEventPartialGrid$DXFREditorcol7" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; id=" />
+            <RuleParameter Name="Index" Value="129" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam48._LegalEventPartialGrid$DXFREditorcol8" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; id=" />
+            <RuleParameter Name="Index" Value="129" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <QueryStringParameters>
+        <QueryStringParameter Name="LegalEventID" Value="3558760" RecordedValue="3558760" CorrelationBinding="{{QueryStringParam69.LegalEventID}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="EISInvestigationID" Value="{{$HIDDEN1.EISInvestigationID}}" RecordedValue="4109076" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="EditableButtonDialog" Value="True" RecordedValue="True" CorrelationBinding="{{QueryStringParam70.EditableButtonDialog}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+      <FormPostHttpBody>
+        <FormPostParameter Name="X-Requested-With" Value="XMLHttpRequest" RecordedValue="XMLHttpRequest" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="295b98a6-2a95-4ad0-b917-c8bb0f9d3305" Version="1.1" Url="{{EISWebServer}}/DXR.axd" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=4109076" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="r" Value="1_124-g0V37" RecordedValue="1_124-g0V37" CorrelationBinding="{{QueryStringParam73.r}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="8b92dc73-5efe-4c31-813d-0f359606e289" Version="1.1" Url="{{EISWebServer}}/DXR.axd" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=4109076" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="r" Value="1_124-g0V37" RecordedValue="1_124-g0V37" CorrelationBinding="{{QueryStringParam76.r}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="ff4b3c83-b4a3-4237-95a4-4ea370bb73c1" Version="1.1" Url="{{EISWebServer}}/DXR.axd" ThinkTime="14" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=4109076" />
+        <Header Name="accept" Value="text/javascript, application/javascript, application/ecmascript, application/x-ecmascript, */*; q=0.01" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="r" Value="1_124-g0V37" RecordedValue="1_124-g0V37" CorrelationBinding="{{QueryStringParam81.r}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="_" Value="1473981408270" RecordedValue="1473981408270" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="b74511b8-4f90-43f4-8622-66168f3fc67f" Version="1.1" Url="{{EISWebServer}}/EIRManagement/SaveEIRLegalEventDetails" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=4109076" />
+        <Header Name="accept" Value="*/*" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="EISInvestigationID" Value="{{$HIDDEN1.EISInvestigationID}}" RecordedValue="4109076" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="HiddenLegalEventsList" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="EditableButtonDialog" Value="True" RecordedValue="True" CorrelationBinding="{{FormPostParam2.EditableButtonDialog}}" UrlEncode="True" />
+        <FormPostParameter Name="LegalCounselReceiptDate" Value="9/15/2016 12:00:00 AM" RecordedValue="9/15/2016 12:00:00 AM" CorrelationBinding="{{FormPostParam3.LegalCounselReceiptDate}}" UrlEncode="True" />
+        <FormPostParameter Name="HasValidationError" Value="False" RecordedValue="False" CorrelationBinding="{{FormPostParam4.HasValidationError}}" UrlEncode="True" />
+        <FormPostParameter Name="ValidationErrorMessage" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXFREditorcol1_Raw" Value="N" RecordedValue="N" CorrelationBinding="{{FormPostParam5._LegalEventPartialGrid_DXFREditorcol1_Raw}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$DXFREditorcol1" Value="Equals..." RecordedValue="Equals..." CorrelationBinding="{{FormPostParam35._LegalEventPartialGrid$DXFREditorcol1}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXFREditorcol1_DDDWS" Value="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" RecordedValue="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" CorrelationBinding="{{FormPostParam16._LegalEventPartialGrid_DXFREditorcol1_DDDWS}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXFREditorcol1_DDD_C_FNPWS" Value="0:0:-1:-10000:-10000:0:0px:-10000:1:0:0:0" RecordedValue="0:0:-1:-10000:-10000:0:0px:-10000:1:0:0:0" CorrelationBinding="{{FormPostParam36._LegalEventPartialGrid_DXFREditorcol1_DDD_C_FNPWS}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$DXFREditorcol1$DDD$C" Value="09/15/2016" RecordedValue="09/15/2016" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXFREditorcol2_Raw" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$DXFREditorcol2" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam17._LegalEventPartialGrid$DXFREditorcol2}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXFREditorcol3_Raw" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$DXFREditorcol3" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam18._LegalEventPartialGrid$DXFREditorcol3}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXFREditorcol4_Raw" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$DXFREditorcol4" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam19._LegalEventPartialGrid$DXFREditorcol4}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXFREditorcol5_Raw" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$DXFREditorcol5" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam20._LegalEventPartialGrid$DXFREditorcol5}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXFREditorcol6_Raw" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$DXFREditorcol6" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam21._LegalEventPartialGrid$DXFREditorcol6}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXFREditorcol7_Raw" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$DXFREditorcol7" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam22._LegalEventPartialGrid$DXFREditorcol7}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXFREditorcol8_Raw" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$DXFREditorcol8" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam23._LegalEventPartialGrid$DXFREditorcol8}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXPagerBottom_PSPSI" Value="0" RecordedValue="0" CorrelationBinding="{{FormPostParam6._LegalEventPartialGrid_DXPagerBottom_PSPSI}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$DXSelInput" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$DXKVInput" Value="['3558760']" RecordedValue="['3558760']" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$CallbackState" Value="BwMHAQIFU3RhdGUHiAcKBwACAQcBAgEHAgIBBwMCAQcEAgEHBQIBBwYCAQcHAgEHCAIBBwkCAQcABwoHAAcFBwEHBQcCBwMHAwcDBwQHAwcFBwMHBgcDBwcHAwcIBwMHCQcFBwAHAAIABQAAAIAJAgxMZWdhbEV2ZW50SUQJAgACAAMHBAIABwACAQcBBwACAQcABwACEEZpbHRlckV4cHJlc3Npb24HAgACCFBhZ2VTaXplAwcF" RecordedValue="BwMHAQIFU3RhdGUHiAcKBwACAQcBAgEHAgIBBwMCAQcEAgEHBQIBBwYCAQcHAgEHCAIBBwkCAQcABwoHAAcFBwEHBQcCBwMHAwcDBwQHAwcFBwMHBgcDBwcHAwcIBwMHCQcFBwAHAAIABQAAAIAJAgxMZWdhbEV2ZW50SUQJAgACAAMHBAIABwACAQcBBwACAQcABwACEEZpbHRlckV4cHJlc3Npb24HAgACCFBhZ2VTaXplAwcF" CorrelationBinding="{{FormPostParam37._LegalEventPartialGrid$CallbackState}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXFilterRowMenuCI" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="LegalEventRemarksReadOnly" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="EISInvestigationID" Value="{{$HIDDEN1.EISInvestigationID}}" RecordedValue="4109076" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="HiddenLegalEventsList" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="LegalEventID" Value="3558760" RecordedValue="3558760" CorrelationBinding="{{FormPostParam24.LegalEventID}}" UrlEncode="True" />
+        <FormPostParameter Name="FutureDatetime" Value="9/15/2516 12:00:00 AM" RecordedValue="9/15/2516 12:00:00 AM" CorrelationBinding="{{FormPostParam25.FutureDatetime}}" UrlEncode="True" />
+        <FormPostParameter Name="CurrentDatetime" Value="9/15/2016 12:00:00 AM" RecordedValue="9/15/2016 12:00:00 AM" CorrelationBinding="{{FormPostParam7.CurrentDatetime}}" UrlEncode="True" />
+        <FormPostParameter Name="EditableButtonDialog" Value="True" RecordedValue="True" CorrelationBinding="{{FormPostParam8.EditableButtonDialog}}" UrlEncode="True" />
+        <FormPostParameter Name="IndexNumber" Value="{{FormPostParam26.IndexNumber}}" RecordedValue="69ded4962ff54ee19842fe8bbfdbd958" CorrelationBinding="{{FormPostParam26.IndexNumber}}" UrlEncode="True" />
+        <FormPostParameter Name="RegionalOfficeSigningMinDate" Value="9/15/2016" RecordedValue="9/15/2016" CorrelationBinding="{{FormPostParam9.RegionalOfficeSigningMinDate}}" UrlEncode="True" />
+        <FormPostParameter Name="IsLegalCounselActionDateValid" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="HiddenLegalEventActionSanctionList" Value="209217~maruti~3558760~maruti~1245~maruti~379~maruti~12~maruti~0~maruti~0|maruti|" RecordedValue="209217~maruti~3558760~maruti~1245~maruti~379~maruti~12~maruti~0~maruti~0|maruti|" CorrelationBinding="{{FormPostParam27.HiddenLegalEventActionSanctionList}}" UrlEncode="True" />
+        <FormPostParameter Name="HiddenLegalEventRegulationViolatedList" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="DocumentFormatCodeDropDown_Value" Value="2" RecordedValue="2" CorrelationBinding="{{FormPostParam10.DocumentFormatCodeDropDown_Value}}" UrlEncode="True" />
+        <FormPostParameter Name="LegalCounselReceiptDateReadOnly" Value="9/15/2016" RecordedValue="9/15/2016" CorrelationBinding="{{FormPostParam11.LegalCounselReceiptDateReadOnly}}" UrlEncode="True" />
+        <FormPostParameter Name="LegalCounselActionDate" Value="9/15/2016" RecordedValue="9/15/2016" CorrelationBinding="{{FormPostParam12.LegalCounselActionDate}}" UrlEncode="True" />
+        <FormPostParameter Name="LegalEventCodeDropDown_Value" Value="2389" RecordedValue="2389" CorrelationBinding="{{FormPostParam28.LegalEventCodeDropDown_Value}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventActionSanctionPartialGrid$DXSelInput" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventActionSanctionPartialGrid$DXKVInput" Value="['209217']" RecordedValue="['209217']" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventActionSanctionPartialGrid$CallbackState" Value="BwMHAQIFU3RhdGUHYQcIBwACAQcBAgEHAgIBBwMCAQcEAgEHBQIBBwYCAQcHAgEHAAcABwAHAAIABQAAAIAJAhVMZWdhbEFjdGlvblNhbmN0aW9uSUQJAgACAAMHBAIABwACAQcBBwACAQcABwACEEZpbHRlckV4cHJlc3Npb24HAgACCFBhZ2VTaXplAwcF" RecordedValue="BwMHAQIFU3RhdGUHYQcIBwACAQcBAgEHAgIBBwMCAQcEAgEHBQIBBwYCAQcHAgEHAAcABwAHAAIABQAAAIAJAhVMZWdhbEFjdGlvblNhbmN0aW9uSUQJAgACAAMHBAIABwACAQcBBwACAQcABwACEEZpbHRlckV4cHJlc3Npb24HAgACCFBhZ2VTaXplAwcF" CorrelationBinding="{{FormPostParam29._LegalEventActionSanctionPartialGrid$CallbackState}}" UrlEncode="True" />
+        <FormPostParameter Name="ddlRegulationCodes_Value_VI" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlRegulationCodes_Value" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlRegulationCodes_Value_DDDWS" Value="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" RecordedValue="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" CorrelationBinding="{{FormPostParam30.ddlRegulationCodes_Value_DDDWS}}" UrlEncode="True" />
+        <FormPostParameter Name="ddlRegulationCodes_Value_DDD_LDeletedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlRegulationCodes_Value_DDD_LInsertedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlRegulationCodes_Value_DDD_LCustomCallback" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlRegulationCodes_Value$DDD$L" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventRegulationViolatedPartialGrid_DXFREditorcol0_Raw" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventRegulationViolatedPartialGrid$DXFREditorcol0" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam31._LegalEventRegulationViolatedPartialGrid$DXFREditorcol0}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventRegulationViolatedPartialGrid_DXFREditorcol1_Raw" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventRegulationViolatedPartialGrid$DXFREditorcol1" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam32._LegalEventRegulationViolatedPartialGrid$DXFREditorcol1}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventRegulationViolatedPartialGrid_DXFREditorcol2_Raw" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventRegulationViolatedPartialGrid$DXFREditorcol2" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam33._LegalEventRegulationViolatedPartialGrid$DXFREditorcol2}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventRegulationViolatedPartialGrid_DXPagerBottom_PSPSI" Value="0" RecordedValue="0" CorrelationBinding="{{FormPostParam13._LegalEventRegulationViolatedPartialGrid_DXPagerBottom_PSPSI}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventRegulationViolatedPartialGrid$DXSelInput" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventRegulationViolatedPartialGrid$DXKVInput" Value="[]" RecordedValue="[]" CorrelationBinding="{{FormPostParam14._LegalEventRegulationViolatedPartialGrid$DXKVInput}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventRegulationViolatedPartialGrid$CallbackState" Value="BwMHAQIFU3RhdGUHUAcDBwACAQcBAgEHAgIBBwAHAwcABwMHAQcDBwIHAwcABwACAAUAAACACQIMTGVnYWxFdmVudElECQIAAgADBwQCAAcAAgEHAAcAAgEHAAcAAhBGaWx0ZXJFeHByZXNzaW9uBwIAAghQYWdlU2l6ZQMHBQ==" RecordedValue="BwMHAQIFU3RhdGUHUAcDBwACAQcBAgEHAgIBBwAHAwcABwMHAQcDBwIHAwcABwACAAUAAACACQIMTGVnYWxFdmVudElECQIAAgADBwQCAAcAAgEHAAcAAgEHAAcAAhBGaWx0ZXJFeHByZXNzaW9uBwIAAghQYWdlU2l6ZQMHBQ==" CorrelationBinding="{{FormPostParam34._LegalEventRegulationViolatedPartialGrid$CallbackState}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventRegulationViolatedPartialGrid_DXFilterRowMenuCI" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="LegalEventRemarks" Value="{{DataSource1.RemarkTextList#csv.Remarks}}" RecordedValue="1" CorrelationBinding="{{FormPostParam15.LegalEventRemarks}}" UrlEncode="True" />
+        <FormPostParameter Name="DXMVCEditorsValues" Value="{&quot;_LegalEventPartialGrid_DXFREditorcol1_DDD_C&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol1&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol2&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol3&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol4&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol5&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol6&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol7&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol8&quot;:null,&quot;ddlRegulationCodes_Value_DDD_L&quot;:[],&quot;ddlRegulationCodes_Value&quot;:null,&quot;_LegalEventRegulationViolatedPartialGrid_DXFREditorcol0&quot;:null,&quot;_LegalEventRegulationViolatedPartialGrid_DXFREditorcol1&quot;:null,&quot;_LegalEventRegulationViolatedPartialGrid_DXFREditorcol2&quot;:null}" RecordedValue="{&quot;_LegalEventPartialGrid_DXFREditorcol1_DDD_C&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol1&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol2&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol3&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol4&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol5&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol6&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol7&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol8&quot;:null,&quot;ddlRegulationCodes_Value_DDD_L&quot;:[],&quot;ddlRegulationCodes_Value&quot;:null,&quot;_LegalEventRegulationViolatedPartialGrid_DXFREditorcol0&quot;:null,&quot;_LegalEventRegulationViolatedPartialGrid_DXFREditorcol1&quot;:null,&quot;_LegalEventRegulationViolatedPartialGrid_DXFREditorcol2&quot;:null}" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="POST" Guid="d340368e-dd2e-4983-89e2-6c149a349f30" Version="1.1" Url="{{EISWebServer}}/EIRManagement/EIRButtonStatus/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=4109076" />
+        <Header Name="accept" Value="application/json, text/javascript, */*; q=0.01" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <StringHttpBody ContentType="application/json; charset=utf-8" InsertByteOrderMark="False">ewAiAEUASQBTAEkAbgB2AGUAcwB0AGkAZwBhAHQAaQBvAG4ASQBkACIAOgAiADQAMQAwADkAMAA3ADYAIgB9AA==</StringHttpBody>
+    </Request>
+    <Request Method="POST" Guid="6d3b546d-cabc-4beb-89e3-deec2ee98d47" Version="1.1" Url="{{EISWebServer}}/EIRManagement/LegalEventGridPartialLoad" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=4109076" />
+        <Header Name="accept" Value="text/html, */*; q=0.01" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam90.r" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?r=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="24" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam93.r" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?r=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="24" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam96.r" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?r=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="24" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <QueryStringParameters>
+        <QueryStringParameter Name="EISInvestigationID" Value="{{$HIDDEN1.EISInvestigationID}}" RecordedValue="4109076" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+      <FormPostHttpBody>
+        <FormPostParameter Name="DXCallbackName" Value="_LegalEventPartialGrid" RecordedValue="_LegalEventPartialGrid" CorrelationBinding="{{FormPostParam49.DXCallbackName}}" UrlEncode="True" />
+        <FormPostParameter Name="DXCallbackArgument" Value="c0:KV|11;['3558760'];GB|9;7|REFRESH;" RecordedValue="c0:KV|11;['3558760'];GB|9;7|REFRESH;" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXFREditorcol1_Raw" Value="N" RecordedValue="N" CorrelationBinding="{{FormPostParam38._LegalEventPartialGrid_DXFREditorcol1_Raw}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$DXFREditorcol1" Value="Equals..." RecordedValue="Equals..." CorrelationBinding="{{FormPostParam50._LegalEventPartialGrid$DXFREditorcol1}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXFREditorcol1_DDDWS" Value="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" RecordedValue="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" CorrelationBinding="{{FormPostParam41._LegalEventPartialGrid_DXFREditorcol1_DDDWS}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXFREditorcol1_DDD_C_FNPWS" Value="0:0:-1:-10000:-10000:0:0px:-10000:1:0:0:0" RecordedValue="0:0:-1:-10000:-10000:0:0px:-10000:1:0:0:0" CorrelationBinding="{{FormPostParam51._LegalEventPartialGrid_DXFREditorcol1_DDD_C_FNPWS}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$DXFREditorcol1$DDD$C" Value="09/15/2016" RecordedValue="09/15/2016" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXFREditorcol2_Raw" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$DXFREditorcol2" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam42._LegalEventPartialGrid$DXFREditorcol2}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXFREditorcol3_Raw" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$DXFREditorcol3" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam43._LegalEventPartialGrid$DXFREditorcol3}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXFREditorcol4_Raw" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$DXFREditorcol4" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam44._LegalEventPartialGrid$DXFREditorcol4}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXFREditorcol5_Raw" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$DXFREditorcol5" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam45._LegalEventPartialGrid$DXFREditorcol5}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXFREditorcol6_Raw" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$DXFREditorcol6" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam46._LegalEventPartialGrid$DXFREditorcol6}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXFREditorcol7_Raw" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$DXFREditorcol7" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam47._LegalEventPartialGrid$DXFREditorcol7}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXFREditorcol8_Raw" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$DXFREditorcol8" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam48._LegalEventPartialGrid$DXFREditorcol8}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXPagerBottom_PSPSI" Value="0" RecordedValue="0" CorrelationBinding="{{FormPostParam39._LegalEventPartialGrid_DXPagerBottom_PSPSI}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$DXSelInput" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$DXKVInput" Value="['3558760']" RecordedValue="['3558760']" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid$CallbackState" Value="BwMHAQIFU3RhdGUHiAcKBwACAQcBAgEHAgIBBwMCAQcEAgEHBQIBBwYCAQcHAgEHCAIBBwkCAQcABwoHAAcFBwEHBQcCBwMHAwcDBwQHAwcFBwMHBgcDBwcHAwcIBwMHCQcFBwAHAAIABQAAAIAJAgxMZWdhbEV2ZW50SUQJAgACAAMHBAIABwACAQcBBwACAQcABwACEEZpbHRlckV4cHJlc3Npb24HAgACCFBhZ2VTaXplAwcF" RecordedValue="BwMHAQIFU3RhdGUHiAcKBwACAQcBAgEHAgIBBwMCAQcEAgEHBQIBBwYCAQcHAgEHCAIBBwkCAQcABwoHAAcFBwEHBQcCBwMHAwcDBwQHAwcFBwMHBgcDBwcHAwcIBwMHCQcFBwAHAAIABQAAAIAJAgxMZWdhbEV2ZW50SUQJAgACAAMHBAIABwACAQcBBwACAQcABwACEEZpbHRlckV4cHJlc3Npb24HAgACCFBhZ2VTaXplAwcF" CorrelationBinding="{{FormPostParam52._LegalEventPartialGrid$CallbackState}}" UrlEncode="True" />
+        <FormPostParameter Name="_LegalEventPartialGrid_DXFilterRowMenuCI" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="DXMVCEditorsValues" Value="{&quot;_LegalEventPartialGrid_DXFREditorcol1_DDD_C&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol1&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol2&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol3&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol4&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol5&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol6&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol7&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol8&quot;:null}" RecordedValue="{&quot;_LegalEventPartialGrid_DXFREditorcol1_DDD_C&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol1&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol2&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol3&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol4&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol5&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol6&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol7&quot;:null,&quot;_LegalEventPartialGrid_DXFREditorcol8&quot;:null}" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="EISInvestigationID" Value="{{$HIDDEN1.EISInvestigationID}}" RecordedValue="4109076" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="EditableButtonDialog" Value="True" RecordedValue="True" CorrelationBinding="{{FormPostParam40.EditableButtonDialog}}" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="46fbc182-4412-498f-88b9-34d499ef325e" Version="1.1" Url="{{EISWebServer}}/DXR.axd" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=4109076" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="r" Value="1_124-g0V37" RecordedValue="1_124-g0V37" CorrelationBinding="{{QueryStringParam90.r}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="607c11f6-9ef6-4203-a57f-c3684f138d7e" Version="1.1" Url="{{EISWebServer}}/DXR.axd" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=4109076" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="r" Value="1_124-g0V37" RecordedValue="1_124-g0V37" CorrelationBinding="{{QueryStringParam93.r}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="9b184fc5-5dc8-4eba-96ff-c82174c42af4" Version="1.1" Url="{{EISWebServer}}/DXR.axd" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=4109076" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="r" Value="1_124-g0V37" RecordedValue="1_124-g0V37" CorrelationBinding="{{QueryStringParam96.r}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+  </Items>
+  <DataSources>
+    <DataSource Name="DataSource1" Provider="Microsoft.VisualStudio.TestTools.DataSource.CSV" Connection="C:\Projects\Install\VisualStudio2015Projects\RemarkTextList.csv">
+      <Tables>
+        <DataSourceTable Name="RemarkTextList#csv" SelectColumns="SelectOnlyBoundColumns" AccessMethod="Sequential" />
+      </Tables>
+    </DataSource>
+    <DataSource Name="EIRList" Provider="Microsoft.VisualStudio.TestTools.DataSource.CSV" Connection="C:\Projects\Install\VisualStudio2015Projects\EIRNumbersList.csv">
+      <Tables>
+        <DataSourceTable Name="EIRNumbersList#csv" SelectColumns="SelectOnlyBoundColumns" AccessMethod="Sequential" />
+      </Tables>
+    </DataSource>
+    <DataSource Name="UserCredList" Provider="Microsoft.VisualStudio.TestTools.DataSource.CSV" Connection="C:\Projects\Install\VisualStudio2015Projects\Credentials.csv">
+      <Tables>
+        <DataSourceTable Name="Credentials#csv" SelectColumns="SelectOnlyBoundColumns" AccessMethod="Sequential" />
+      </Tables>
+    </DataSource>
+  </DataSources>
+  <ContextParameters>
+    <ContextParameter Name="EISWebServer" Value="http://172.29.99.89:8888" />
+  </ContextParameters>
+  <ValidationRules>
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidateResponseUrl, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response URL" Description="Validates that the response URL after redirects are followed is the same as the recorded response URL.  QueryString parameters are ignored." Level="Low" ExectuionOrder="BeforeDependents" />
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleResponseTimeGoal, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response Time Goal" Description="Validates that the response time for the request is less than or equal to the response time goal as specified on the request.  Response time goals of zero will be ignored." Level="Low" ExectuionOrder="AfterDependents">
+      <RuleParameters>
+        <RuleParameter Name="Tolerance" Value="0" />
+      </RuleParameters>
+    </ValidationRule>
+  </ValidationRules>
+</WebTest>

@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebTest Name="WebTest3" Id="656d6b41-0bac-4bc2-bcee-eda1c13379e1" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="faa\aqs230xr" CredentialPassword="AF7Mn3g26AQdqnwIX89oyQ==" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="WebTest3.1a0443d7-0134-4d8a-b5ad-d2660b40ab21.rec.webtestresult" ResultsLocale="">
+  <Items>
+    <Request Method="GET" Guid="20eb313f-a199-43e8-aa69-711024823843" Version="1.1" Url="{{WebServer1}}/" ThinkTime="5" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam1.Enter" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="Enter" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+    </Request>
+    <Request Method="POST" Guid="680b1175-a9ca-428a-a8ef-e993fea493e5" Version="1.1" Url="{{WebServer1}}/Home/SplashEnter" ThinkTime="8" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Home/MyEIS" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{WebServer1}}/" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam2.myWorkDataGrid$DXFREditorcol0" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="myWorkDataGrid_DXFREditorcol0_I" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam3.myWorkDataGrid$DXFREditorcol1" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="myWorkDataGrid_DXFREditorcol1_I" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam4.myWorkDataGrid$DXFREditorcol2" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="myWorkDataGrid_DXFREditorcol2_I" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam5.myWorkDataGrid$DXFREditorcol3" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="myWorkDataGrid_DXFREditorcol3_I" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam6.myWorkDataGrid$DXFREditorcol4" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="myWorkDataGrid_DXFREditorcol4_I" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam7.myWorkDataGrid$DXFREditorcol5" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="myWorkDataGrid_DXFREditorcol5_I" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam8.myWorkDataGrid$DXFREditorcol6" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="myWorkDataGrid_DXFREditorcol6_I" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam9.myWorkDataGrid$DXFREditorcol7" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="myWorkDataGrid_DXFREditorcol7_I" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam10.myWorkDataGrid$DXFREditorcol8" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="myWorkDataGrid_DXFREditorcol8_I" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam11.myWorkDataGrid$DXFREditorcol9" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="myWorkDataGrid_DXFREditorcol9_I" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam12.myWorkDataGrid$DXFREditorcol10" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="myWorkDataGrid_DXFREditorcol10_I" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam13.myWorkDataGrid$CallbackState" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="myWorkDataGrid_CallbackState" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam14.DXCallbackName" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value=" id=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; sty" />
+            <RuleParameter Name="Index" Value="36" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <FormPostHttpBody>
+        <FormPostParameter Name="RedirectURL" Value="{{$HIDDEN1.RedirectURL}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Enter" Value="I Agree" RecordedValue="I Agree" CorrelationBinding="{{FormPostParam1.Enter}}" UrlEncode="True" />
+        <FormPostParameter Name="DXScript" Value="1_142,1_80,1_135,1_91,14_0,1_98,1_104,1_105,1_101,1_84,1_109,14_23,1_92,14_1,1_77,1_128,1_126,1_94,1_97,1_95,1_96,1_106,14_4,1_100,1_117,1_103,14_12,14_13,1_102,1_129,1_107,1_90,1_137,1_114,1_113,14_10,1_133,1_119,1_127,14_16" RecordedValue="1_142,1_80,1_135,1_91,14_0,1_98,1_104,1_105,1_101,1_84,1_109,14_23,1_92,14_1,1_77,1_128,1_126,1_94,1_97,1_95,1_96,1_106,14_4,1_100,1_117,1_103,14_12,14_13,1_102,1_129,1_107,1_90,1_137,1_114,1_113,14_10,1_133,1_119,1_127,14_16" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="POST" Guid="3c339a40-6506-4785-9728-8a54ff20937c" Version="1.1" Url="{{WebServer1}}/Home/_myWorkGrid" ThinkTime="5" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{WebServer1}}/Home/MyEIS" />
+        <Header Name="accept" Value="text/html, */*; q=0.01" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="DXCallbackName" Value="myWorkDataGrid" RecordedValue="myWorkDataGrid" CorrelationBinding="{{FormPostParam14.DXCallbackName}}" UrlEncode="True" />
+        <FormPostParameter Name="DXCallbackArgument" Value="c0:KV|51;['1104582','1104584','1104583','1104581','1104575'];GB|22;12|PAGERONCLICK5|PSP20;" RecordedValue="c0:KV|51;['1104582','1104584','1104583','1104581','1104575'];GB|22;12|PAGERONCLICK5|PSP20;" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid_DXFREditorcol0_Raw" Value="{{$HIDDEN1.myWorkDataGrid_DXFREditorcol0_Raw}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid$DXFREditorcol0" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam2.myWorkDataGrid$DXFREditorcol0}}" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid_DXFREditorcol1_Raw" Value="{{$HIDDEN1.myWorkDataGrid_DXFREditorcol1_Raw}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid$DXFREditorcol1" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam3.myWorkDataGrid$DXFREditorcol1}}" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid_DXFREditorcol2_Raw" Value="{{$HIDDEN1.myWorkDataGrid_DXFREditorcol2_Raw}}" RecordedValue="N" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid$DXFREditorcol2" Value="Equals..." RecordedValue="Equals..." CorrelationBinding="{{FormPostParam4.myWorkDataGrid$DXFREditorcol2}}" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid_DXFREditorcol2_DDDWS" Value="{{$HIDDEN1.myWorkDataGrid_DXFREditorcol2_DDDWS}}" RecordedValue="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid_DXFREditorcol2_DDD_C_FNPWS" Value="{{$HIDDEN1.myWorkDataGrid_DXFREditorcol2_DDD_C_FNPWS}}" RecordedValue="0:0:-1:-10000:-10000:0:0px:-10000:1:0:0:0" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid$DXFREditorcol2$DDD$C" Value="{{$HIDDEN1.myWorkDataGrid$DXFREditorcol2$DDD$C}}" RecordedValue="09/15/2016" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid_DXFREditorcol3_Raw" Value="{{$HIDDEN1.myWorkDataGrid_DXFREditorcol3_Raw}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid$DXFREditorcol3" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam5.myWorkDataGrid$DXFREditorcol3}}" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid_DXFREditorcol4_Raw" Value="{{$HIDDEN1.myWorkDataGrid_DXFREditorcol4_Raw}}" RecordedValue="N" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid$DXFREditorcol4" Value="Equals..." RecordedValue="Equals..." CorrelationBinding="{{FormPostParam6.myWorkDataGrid$DXFREditorcol4}}" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid_DXFREditorcol4_DDDWS" Value="{{$HIDDEN1.myWorkDataGrid_DXFREditorcol4_DDDWS}}" RecordedValue="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid_DXFREditorcol4_DDD_C_FNPWS" Value="{{$HIDDEN1.myWorkDataGrid_DXFREditorcol4_DDD_C_FNPWS}}" RecordedValue="0:0:-1:-10000:-10000:0:0px:-10000:1:0:0:0" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid$DXFREditorcol4$DDD$C" Value="{{$HIDDEN1.myWorkDataGrid$DXFREditorcol4$DDD$C}}" RecordedValue="09/15/2016" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid_DXFREditorcol5_Raw" Value="{{$HIDDEN1.myWorkDataGrid_DXFREditorcol5_Raw}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid$DXFREditorcol5" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam7.myWorkDataGrid$DXFREditorcol5}}" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid_DXFREditorcol6_Raw" Value="{{$HIDDEN1.myWorkDataGrid_DXFREditorcol6_Raw}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid$DXFREditorcol6" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam8.myWorkDataGrid$DXFREditorcol6}}" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid_DXFREditorcol7_Raw" Value="{{$HIDDEN1.myWorkDataGrid_DXFREditorcol7_Raw}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid$DXFREditorcol7" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam9.myWorkDataGrid$DXFREditorcol7}}" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid_DXFREditorcol8_Raw" Value="{{$HIDDEN1.myWorkDataGrid_DXFREditorcol8_Raw}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid$DXFREditorcol8" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam10.myWorkDataGrid$DXFREditorcol8}}" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid_DXFREditorcol9_Raw" Value="{{$HIDDEN1.myWorkDataGrid_DXFREditorcol9_Raw}}" RecordedValue="N" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid$DXFREditorcol9" Value="Equals..." RecordedValue="Equals..." CorrelationBinding="{{FormPostParam11.myWorkDataGrid$DXFREditorcol9}}" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid_DXFREditorcol9_DDDWS" Value="{{$HIDDEN1.myWorkDataGrid_DXFREditorcol9_DDDWS}}" RecordedValue="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid_DXFREditorcol9_DDD_C_FNPWS" Value="{{$HIDDEN1.myWorkDataGrid_DXFREditorcol9_DDD_C_FNPWS}}" RecordedValue="0:0:-1:-10000:-10000:0:0px:-10000:1:0:0:0" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid$DXFREditorcol9$DDD$C" Value="{{$HIDDEN1.myWorkDataGrid$DXFREditorcol9$DDD$C}}" RecordedValue="09/15/2016" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid_DXFREditorcol10_Raw" Value="{{$HIDDEN1.myWorkDataGrid_DXFREditorcol10_Raw}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid$DXFREditorcol10" Value="Contains..." RecordedValue="Contains..." CorrelationBinding="{{FormPostParam12.myWorkDataGrid$DXFREditorcol10}}" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid_DXPagerBottom_PSPSI" Value="{{$HIDDEN1.myWorkDataGrid_DXPagerBottom_PSPSI}}" RecordedValue="2" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid$DXSelInput" Value="{{$HIDDEN1.myWorkDataGrid$DXSelInput}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid$DXKVInput" Value="['1104582','1104584','1104583','1104581','1104575']" RecordedValue="['1104582','1104584','1104583','1104581','1104575']" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid$CallbackState" Value="BwMHAQIFU3RhdGUHhgcLBwACAQcBAgEHAgIBBwMCAQcEAgEHBQIBBwYCAQcHAgEHCAIBBwkCAQcKAgEHAAcLBwAHAwcBBwMHAgcFBwMHAwcEBwUHBQcDBwYHAwcHBwMHCAcDBwkHBQcKBwMHAAcAAgAFAAAAgAkCAklECQIAAgADBwQCAAcAAgEHDAcAAgEHAAcAAhBGaWx0ZXJFeHByZXNzaW9uBwIAAghQYWdlU2l6ZQMHBQ==" RecordedValue="BwMHAQIFU3RhdGUHhgcLBwACAQcBAgEHAgIBBwMCAQcEAgEHBQIBBwYCAQcHAgEHCAIBBwkCAQcKAgEHAAcLBwAHAwcBBwMHAgcFBwMHAwcEBwUHBQcDBwYHAwcHBwMHCAcDBwkHBQcKBwMHAAcAAgAFAAAAgAkCAklECQIAAgADBwQCAAcAAgEHDAcAAgEHAAcAAhBGaWx0ZXJFeHByZXNzaW9uBwIAAghQYWdlU2l6ZQMHBQ==" CorrelationBinding="{{FormPostParam13.myWorkDataGrid$CallbackState}}" UrlEncode="True" />
+        <FormPostParameter Name="myWorkDataGrid_DXFilterRowMenuCI" Value="{{$HIDDEN1.myWorkDataGrid_DXFilterRowMenuCI}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="DXMVCEditorsValues" Value="{&quot;myWorkDataGrid_DXFREditorcol0&quot;:null,&quot;myWorkDataGrid_DXFREditorcol1&quot;:null,&quot;myWorkDataGrid_DXFREditorcol2_DDD_C&quot;:null,&quot;myWorkDataGrid_DXFREditorcol2&quot;:null,&quot;myWorkDataGrid_DXFREditorcol3&quot;:null,&quot;myWorkDataGrid_DXFREditorcol4_DDD_C&quot;:null,&quot;myWorkDataGrid_DXFREditorcol4&quot;:null,&quot;myWorkDataGrid_DXFREditorcol5&quot;:null,&quot;myWorkDataGrid_DXFREditorcol6&quot;:null,&quot;myWorkDataGrid_DXFREditorcol7&quot;:null,&quot;myWorkDataGrid_DXFREditorcol8&quot;:null,&quot;myWorkDataGrid_DXFREditorcol9_DDD_C&quot;:null,&quot;myWorkDataGrid_DXFREditorcol9&quot;:null,&quot;myWorkDataGrid_DXFREditorcol10&quot;:null}" RecordedValue="{&quot;myWorkDataGrid_DXFREditorcol0&quot;:null,&quot;myWorkDataGrid_DXFREditorcol1&quot;:null,&quot;myWorkDataGrid_DXFREditorcol2_DDD_C&quot;:null,&quot;myWorkDataGrid_DXFREditorcol2&quot;:null,&quot;myWorkDataGrid_DXFREditorcol3&quot;:null,&quot;myWorkDataGrid_DXFREditorcol4_DDD_C&quot;:null,&quot;myWorkDataGrid_DXFREditorcol4&quot;:null,&quot;myWorkDataGrid_DXFREditorcol5&quot;:null,&quot;myWorkDataGrid_DXFREditorcol6&quot;:null,&quot;myWorkDataGrid_DXFREditorcol7&quot;:null,&quot;myWorkDataGrid_DXFREditorcol8&quot;:null,&quot;myWorkDataGrid_DXFREditorcol9_DDD_C&quot;:null,&quot;myWorkDataGrid_DXFREditorcol9&quot;:null,&quot;myWorkDataGrid_DXFREditorcol10&quot;:null}" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="2e302055-b927-4a48-b9dd-bfafb6554eb4" Version="1.1" Url="{{WebServer1}}/EIRManagement/EnforcementInvestigativeReports" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="POST" Guid="b0689f12-275f-48c5-8eb4-7eff52fba264" Version="1.1" Url="{{WebServer1}}/EIRManagement/EIRButtonStatus/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="referer" Value="{{WebServer1}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=1104582" />
+            <Header Name="accept" Value="application/json, text/javascript, */*; q=0.01" />
+            <Header Name="x-requested-with" Value="XMLHttpRequest" />
+          </Headers>
+          <StringHttpBody ContentType="application/json; charset=utf-8" InsertByteOrderMark="False">ewAiAEUASQBTAEkAbgB2AGUAcwB0AGkAZwBhAHQAaQBvAG4ASQBkACIAOgAiADEAMQAwADQANQA4ADIAIgB9AA==</StringHttpBody>
+        </Request>
+      </DependentRequests>
+      <Headers>
+        <Header Name="Referer" Value="{{WebServer1}}/Home/MyEIS" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="EIRNo" Value="{{DataSource1.EIRNumbersList#csv.EIRNumber}}" RecordedValue="1104582" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Comment CommentText="Created from LocalHost &amp; pointing to QA. As recording directly from QA is giving issues. this wpt accesses home page &amp; then access an EIR, loads EIR form for eir, 4 EIR were passed as data source csv file to the query string varialbe EIRNo" />
+  </Items>
+  <DataSources>
+    <DataSource Name="DataSource1" Provider="Microsoft.VisualStudio.TestTools.DataSource.CSV" Connection="C:\Projects\Install\VisualStudio2015Projects\EIRNumbersList.csv">
+      <Tables>
+        <DataSourceTable Name="EIRNumbersList#csv" SelectColumns="SelectOnlyBoundColumns" AccessMethod="Sequential" />
+      </Tables>
+    </DataSource>
+  </DataSources>
+  <ContextParameters>
+    <ContextParameter Name="WebServer1" Value="http://172.29.99.89:8888" />
+  </ContextParameters>
+  <ValidationRules>
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidateResponseUrl, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response URL" Description="Validates that the response URL after redirects are followed is the same as the recorded response URL.  QueryString parameters are ignored." Level="Low" ExectuionOrder="BeforeDependents" />
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleResponseTimeGoal, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response Time Goal" Description="Validates that the response time for the request is less than or equal to the response time goal as specified on the request.  Response time goals of zero will be ignored." Level="Low" ExectuionOrder="AfterDependents">
+      <RuleParameters>
+        <RuleParameter Name="Tolerance" Value="0" />
+      </RuleParameters>
+    </ValidationRule>
+  </ValidationRules>
+</WebTest>

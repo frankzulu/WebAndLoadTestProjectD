@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebTest Name="WebTest2" Id="a5a66786-9e66-4186-9cd2-8bd186f2cc11" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="WebTest2.1d129373-6c88-457f-8662-311e8d0f3933.rec.webtestresult" ResultsLocale="">
+  <Items>
+    <Request Method="GET" Guid="e0055510-bc90-41b7-a395-56699ba606ea" Version="1.1" Url="https://localhost:44302/" ThinkTime="5" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False" />
+    <Request Method="POST" Guid="e49a4981-d6d6-416e-9430-7dfc4c068e69" Version="1.1" Url="https://localhost:44302/Home/SplashEnter" ThinkTime="5" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="https://localhost:44302/Home/MyEIS" ReportingName="" IgnoreHttpStatusCode="False">
+      <FormPostHttpBody>
+        <FormPostParameter Name="RedirectURL" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Enter" Value="I Agree" RecordedValue="I Agree" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="DXScript" Value="1_142,1_80,1_135,1_91,14_0,1_98,1_104,1_105,1_101,1_84,1_109,14_23,1_92,14_1,1_77,1_128,1_126,1_94,1_97,1_95,1_96,1_106,14_4,1_100,1_117,1_103,14_12,14_13,1_102,1_129,1_107,1_90,1_137,1_114,1_113,14_10,1_133,1_119,1_127,14_16" RecordedValue="1_142,1_80,1_135,1_91,14_0,1_98,1_104,1_105,1_101,1_84,1_109,14_23,1_92,14_1,1_77,1_128,1_126,1_94,1_97,1_95,1_96,1_106,14_4,1_100,1_117,1_103,14_12,14_13,1_102,1_129,1_107,1_90,1_137,1_114,1_113,14_10,1_133,1_119,1_127,14_16" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="447f934c-730e-49b3-b291-7df3e396e4a0" Version="1.1" Url="https://localhost:44302/EIRManagement/EnforcementInvestigativeReports" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <QueryStringParameters>
+        <QueryStringParameter Name="EIRNo" Value="4109079" RecordedValue="4109079" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+  </Items>
+  <ValidationRules>
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidateResponseUrl, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response URL" Description="Validates that the response URL after redirects are followed is the same as the recorded response URL.  QueryString parameters are ignored." Level="Low" ExectuionOrder="BeforeDependents" />
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleResponseTimeGoal, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response Time Goal" Description="Validates that the response time for the request is less than or equal to the response time goal as specified on the request.  Response time goals of zero will be ignored." Level="Low" ExectuionOrder="AfterDependents">
+      <RuleParameters>
+        <RuleParameter Name="Tolerance" Value="0" />
+      </RuleParameters>
+    </ValidationRule>
+  </ValidationRules>
+</WebTest>

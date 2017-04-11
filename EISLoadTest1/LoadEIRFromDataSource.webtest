@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebTest Name="LoadEIRFromDataSource" Id="fbf8646a-64b8-41d7-bf39-3ecc98d790c7" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="{{DataSource1.Credentials#csv.domainname}}" CredentialPassword="vUuBBAwaEbSFpE/HnferCXrzBsYQZDMBFfdgQMOf28eFQ5uEzwYo5hmlGtwOASvA" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="LoadEIRFromDataSource.5c46ee21-8454-4043-8363-7a2b850df12f.rec.webtestresult" ResultsLocale="">
+  <Items>
+    <Comment CommentText="Session Fails This WPT accesses home page, clicks ok splash, goes to home page, clicks on the link to access EIR " />
+    <Request Method="GET" Guid="d24a8643-1662-43f3-aff5-503a3d9303ed" Version="1.1" Url="{{WebServer1}}/" ThinkTime="11" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam1.Enter" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="Enter" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+    </Request>
+    <Request Method="POST" Guid="0d1cce6d-9295-4b47-b69a-bd6832298738" Version="1.1" Url="{{WebServer1}}/Home/SplashEnter" ThinkTime="17" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{WebServer1}}/Home/MyEIS" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{WebServer1}}/" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="RedirectURL" Value="{{$HIDDEN1.RedirectURL}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Enter" Value="I Agree" RecordedValue="I Agree" CorrelationBinding="{{FormPostParam1.Enter}}" UrlEncode="True" />
+        <FormPostParameter Name="DXScript" Value="{{$HIDDEN1.DXScript}}" RecordedValue="1_142,1_80,1_135,1_91,14_0,1_98,1_104,1_105,1_101,1_84,1_109,14_23,1_92,14_1,1_77,1_128,1_126,1_94,1_97,1_95,1_96,1_106,14_4,1_100,1_117,1_103,14_12,14_13,1_102,1_129,1_107,1_90,1_137,1_114,1_113,14_10,1_133,1_119,1_127,14_16" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="POST" Guid="753542af-fbdd-411e-9bdf-ef0e1294c64a" Version="1.1" Url="{{WebServer1}}/Search/SearchEIRDataInfo" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{WebServer1}}/Home/MyEIS" />
+        <Header Name="accept" Value="*/*" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="EIRID" Value="4109082" RecordedValue="4109082" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+      <StringHttpBody ContentType="" InsertByteOrderMark="False">
+      </StringHttpBody>
+    </Request>
+    <Request Method="GET" Guid="5caa3e49-fc71-44ba-9803-5c5d86dde1c6" Version="1.1" Url="{{WebServer1}}/EIRManagement/EnforcementInvestigativeReports" ThinkTime="3" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="POST" Guid="d90a40cb-e68b-4450-b0cb-0db81a1d1bf8" Version="1.1" Url="{{WebServer1}}/EIRManagement/EIRButtonStatus/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="referer" Value="{{WebServer1}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=4109082" />
+            <Header Name="accept" Value="application/json, text/javascript, */*; q=0.01" />
+            <Header Name="x-requested-with" Value="XMLHttpRequest" />
+          </Headers>
+          <StringHttpBody ContentType="application/json; charset=utf-8" InsertByteOrderMark="False">ewAiAEUASQBTAEkAbgB2AGUAcwB0AGkAZwBhAHQAaQBvAG4ASQBkACIAOgAiADQAMQAwADkAMAA4ADIAIgB9AA==</StringHttpBody>
+        </Request>
+      </DependentRequests>
+      <Headers>
+        <Header Name="Referer" Value="{{WebServer1}}/Home/MyEIS" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="EIRNo" Value="4109082" RecordedValue="4109082" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+  </Items>
+  <DataSources>
+    <DataSource Name="DataSource1" Provider="Microsoft.VisualStudio.TestTools.DataSource.CSV" Connection="C:\Projects\Install\VisualStudio2015Projects\Credentials.csv">
+      <Tables>
+        <DataSourceTable Name="Credentials#csv" SelectColumns="SelectOnlyBoundColumns" AccessMethod="Sequential" />
+      </Tables>
+    </DataSource>
+    <DataSource Name="DataSource2" Provider="Microsoft.VisualStudio.TestTools.DataSource.CSV" Connection="C:\Projects\Install\VisualStudio2015Projects\EIRNumbersList.csv">
+      <Tables>
+        <DataSourceTable Name="EIRNumbersList#csv" SelectColumns="SelectOnlyBoundColumns" AccessMethod="Sequential" />
+      </Tables>
+    </DataSource>
+  </DataSources>
+  <ContextParameters>
+    <ContextParameter Name="EISLocalWebServer" Value="http://172.29.99.89:8888" />
+    <ContextParameter Name="WebServer1" Value="http://172.29.99.89:8888" />
+  </ContextParameters>
+  <ValidationRules>
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidateResponseUrl, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response URL" Description="Validates that the response URL after redirects are followed is the same as the recorded response URL.  QueryString parameters are ignored." Level="Low" ExectuionOrder="BeforeDependents" />
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleResponseTimeGoal, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response Time Goal" Description="Validates that the response time for the request is less than or equal to the response time goal as specified on the request.  Response time goals of zero will be ignored." Level="Low" ExectuionOrder="AfterDependents">
+      <RuleParameters>
+        <RuleParameter Name="Tolerance" Value="0" />
+      </RuleParameters>
+    </ValidationRule>
+  </ValidationRules>
+</WebTest>

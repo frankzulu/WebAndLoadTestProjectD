@@ -1,0 +1,1323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebTest Name="EIRReopenNSave" Id="311b36bb-3108-4c49-8492-3cbd09dbcb45" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="faa\aqs230xr" CredentialPassword="AF7Mn3g26AQdqnwIX89oyQ==" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="WebTest5.ab2db0b7-9fb2-45de-8874-094852764e9d.rec.webtestresult" ResultsLocale="">
+  <Items>
+    <Request Method="GET" Guid="680e0e5c-7982-485b-a6fb-83128dd29b6d" Version="1.1" Url="{{EISWebServer}}/" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam1.Enter" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="Enter" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+    </Request>
+    <Request Method="POST" Guid="82330c7b-2c0f-419d-a8f7-77c98c151c9e" Version="1.1" Url="{{EISWebServer}}/Home/SplashEnter" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="{{EISWebServer}}/Home/MyEIS" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{EISWebServer}}/" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="RedirectURL" Value="{{$HIDDEN1.RedirectURL}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Enter" Value="I Agree" RecordedValue="I Agree" CorrelationBinding="{{FormPostParam1.Enter}}" UrlEncode="True" />
+        <FormPostParameter Name="DXScript" Value="1_142,1_80,1_135,1_91,14_0,1_98,1_104,1_105,1_101,1_84,1_109,14_23,1_92,14_1,1_77,1_128,1_126,1_94,1_97,1_95,1_96,1_106,14_4,1_100,1_117,1_103,14_12,14_13,1_102,1_129,1_107,1_90,1_137,1_114,1_113,14_10,1_133,1_119,1_127,14_16" RecordedValue="1_142,1_80,1_135,1_91,14_0,1_98,1_104,1_105,1_101,1_84,1_109,14_23,1_92,14_1,1_77,1_128,1_126,1_94,1_97,1_95,1_96,1_106,14_4,1_100,1_117,1_103,14_12,14_13,1_102,1_129,1_107,1_90,1_137,1_114,1_113,14_10,1_133,1_119,1_127,14_16" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="0fea4d2e-c307-41fd-9229-433b2d09bd99" Version="1.1" Url="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="POST" Guid="930afe5b-5895-4d99-9ca8-fb9e226dd256" Version="1.1" Url="{{EISWebServer}}/EIRManagement/EIRButtonStatus/" ThinkTime="7" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=ClosedEIRList.EIRListForReOpenNSave#csv.EIRNumber" />
+            <Header Name="accept" Value="application/json, text/javascript, */*; q=0.01" />
+            <Header Name="x-requested-with" Value="XMLHttpRequest" />
+          </Headers>
+          <StringHttpBody ContentType="application/json; charset=utf-8" InsertByteOrderMark="False">ewAiAEUASQBTAEkAbgB2AGUAcwB0AGkAZwBhAHQAaQBvAG4ASQBkACIAOgAiAEMAbABvAHMAZQBkAEUASQBSAEwAaQBzAHQALgBFAEkAUgBMAGkAcwB0AEYAbwByAFIAZQBPAHAAZQBuAE4AUwBhAHYAZQAjAGMAcwB2AC4ARQBJAFIATgB1AG0AYgBlAHIAIgB9AA==</StringHttpBody>
+        </Request>
+      </DependentRequests>
+      <Headers>
+        <Header Name="Referer" Value="{{EISWebServer}}/Home/MyEIS" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam3.EISReportNumberRegionCode" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="EISReportNumberRegionCode" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam4.EISFieldOffice2DigitNumber" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="EISFieldOffice2DigitNumber" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam5.EISYear" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="EISYear" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam6.ddlEISFieldOffice_String" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ddlEISFieldOffice_String" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam7.EISSequenceNumber" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="EISSequenceNumber" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam8.EntryDateForDisplay" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="EntryDateForDisplay" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam9.DateOfViolation" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="DateOfViolation" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam10.InvestigationStartDate" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="InvestigationStartDate" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam11.ViolatorName" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ViolatorName" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam12.ViolationDate" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ViolationDate" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam13.ViolationDateKnownToFAA" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ViolationDateKnownToFAA" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam14.InvestigatingOfficeSignedOutDate" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="InvestigatingOfficeSignedOutDate" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam15.InvestigatingOfficeInspectorName" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="InvestigatingOfficeInspectorName" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam16.RegionalOfficeReceivedDate" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="RegionalOfficeReceivedDate" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam17.RegionalOfficeSigningDate" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="RegionalOfficeSigningDate" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam18.EditableEIRForm" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value=" == &quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; || " />
+            <RuleParameter Name="Index" Value="13" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam19.Saved" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="e = &quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;;&#xD;&#xA; " />
+            <RuleParameter Name="Index" Value="2" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam20.DesignatorCodeValidation" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="val=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; dat" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam21.AirmanCertificateNumberValidation" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="val=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; dat" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam22.ShowDisabledView" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="7" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam23.SelfDisclosureValidationForRegionAndSource" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="val=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; dat" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam24.ViolatorDesignatorRequiredForCertificateType" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="val=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; dat" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam25.EquipmentInvolvedModelCodeValidationForEquipType" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="val=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; dat" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam26.EquipInvOwnerInfoValidationBySourceCode" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="val=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; dat" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam27.EquipInvOwnerInfoValidationForNameSameAsViolator" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="val=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; dat" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam28.IsFAAAcceptedDateGreaterThanKnownToFAADateCheck" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="e = &quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;;&#xD;&#xA; " />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam29.InvestigatingOfficeInspectorCodeRequiredForSecurity" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="val=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; dat" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam30.ActionSanctionSDYesValidation" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="val=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; dat" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam31.SecurityProgramValidation" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="val=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; dat" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam32.ViolationDateKnownToFAAForValidation" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="79" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam33.ddlEISFieldOffice_Value" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="6" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam34.ddlSelfDisclosureFlag_Value" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam35.EquipmentInvolvedModelCodeValidation" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="val=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; dat" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam36.EquipmentInvolvedOwnerDesignatorCodeValidation" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="val=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; dat" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam37.ViolationAirportCodeValidation" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="val=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; dat" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam38.IFORegulationValidation" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="val=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; dat" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam39.RegulationViolatedGrid_DXPagerBottom_PSPSI" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam40.ddlRelatedDataAccidentCodeID_Value" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="6&quot;, &quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;, &quot;9" />
+            <RuleParameter Name="Index" Value="2" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam41.SecurityProgramGrid_DXPagerBottom_PSPSI" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam42.InvestigatingOfficeInspectorCodeValidation" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="val=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; dat" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam43.InvestigatingOfficeSignedOutDateTemp" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="79" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam44.RegionalRegulationValidation" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="val=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; dat" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam45.ddlInvestigatingOfficeCodeID_Value_VI" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="6" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam46.ddlInvestigatingOfficeCodeID_Value" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="172" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam47.ddlInvestigatingOfficeCodeID_Value$DDD$L" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="6" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam48.RegionalRegulationViolatedGrid_DXPagerBottom_PSPSI" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam49.ddlSigningRegionalOfficeCodeID_Value" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="184" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <QueryStringParameters>
+        <QueryStringParameter Name="EIRNo" Value="{{ClosedEIRList.EIRListForReOpenNSave#csv.EIRNumber}}" RecordedValue="4109079" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="daae6b28-0874-427a-a8ff-c9e1d7c84ac0" Version="1.1" Url="{{EISWebServer}}/EIRManagement/ShowOpenDialog" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=ClosedEIRList.EIRListForReOpenNSave#csv.EIRNumber" />
+        <Header Name="accept" Value="*/*" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam14.Length" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?Length=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam2.submitButton" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; tit" />
+            <RuleParameter Name="Index" Value="1" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <QueryStringParameters>
+        <QueryStringParameter Name="EISInvestigationID" Value="{{$HIDDEN1.EISInvestigationID}}" RecordedValue="4109079" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+      <StringHttpBody ContentType="application/json" InsertByteOrderMark="False">
+      </StringHttpBody>
+    </Request>
+    <Request Method="POST" Guid="de1b4c7e-802d-4293-b191-59325c2620e8" Version="1.1" Url="{{EISWebServer}}/EIRManagement/Open" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=ClosedEIRList.EIRListForReOpenNSave#csv.EIRNumber" />
+        <Header Name="accept" Value="*/*" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="Length" Value="13" RecordedValue="13" CorrelationBinding="{{QueryStringParam14.Length}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+      <FormPostHttpBody>
+        <FormPostParameter Name="submitButton" Value="OK" RecordedValue="OK" CorrelationBinding="{{FormPostParam2.submitButton}}" UrlEncode="True" />
+        <FormPostParameter Name="EISInvestigationID" Value="{{$HIDDEN1.EISInvestigationID}}" RecordedValue="4109079" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="X-Requested-With" Value="XMLHttpRequest" RecordedValue="XMLHttpRequest" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="POST" Guid="515e4972-1afd-408d-b494-ec1de09ee79c" Version="1.1" Url="{{EISWebServer}}/EIRManagement/EIRButtonStatus/" ThinkTime="6" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=ClosedEIRList.EIRListForReOpenNSave#csv.EIRNumber" />
+        <Header Name="accept" Value="application/json, text/javascript, */*; q=0.01" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <StringHttpBody ContentType="application/json; charset=utf-8" InsertByteOrderMark="False">ewAiAEUASQBTAEkAbgB2AGUAcwB0AGkAZwBhAHQAaQBvAG4ASQBkACIAOgAiAEMAbABvAHMAZQBkAEUASQBSAEwAaQBzAHQALgBFAEkAUgBMAGkAcwB0AEYAbwByAFIAZQBPAHAAZQBuAE4AUwBhAHYAZQAjAGMAcwB2AC4ARQBJAFIATgB1AG0AYgBlAHIAIgB9AA==</StringHttpBody>
+    </Request>
+    <Request Method="POST" Guid="f4963b40-d6ab-445a-a151-166ddfa2bbeb" Version="1.1" Url="{{EISWebServer}}/EIRManagement/EditEIR/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=ClosedEIRList.EIRListForReOpenNSave#csv.EIRNumber" />
+        <Header Name="accept" Value="application/json, text/javascript, */*; q=0.01" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <StringHttpBody ContentType="application/json; charset=utf-8" InsertByteOrderMark="False">ewAiAEUASQBSAE4AbwAiADoAIgBDAGwAbwBzAGUAZABFAEkAUgBMAGkAcwB0AC4ARQBJAFIATABpAHMAdABGAG8AcgBSAGUATwBwAGUAbgBOAFMAYQB2AGUAIwBjAHMAdgAuAEUASQBSAE4AdQBtAGIAZQByACIAfQA=</StringHttpBody>
+    </Request>
+    <Request Method="POST" Guid="58831b91-ae74-41ef-a4ed-0fe3dae6814a" Version="1.1" Url="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=ClosedEIRList.EIRListForReOpenNSave#csv.EIRNumber" />
+        <Header Name="accept" Value="*/*" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam38.r" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?r=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="48" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam41.r" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?r=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="48" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam46.r" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?r=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="48" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam50.StatusCode" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="4" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam51.StatusCode" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="4" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam52.OpenCloseIndicator" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="58" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam53.ctllpViolatorDesignatorCode_DDDWS" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="1058" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam54.ctllpAirmanCertificateNumber_DDDWS" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="1058" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam55.ddlViolatorBusinessConcernCode_Value" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; sel" />
+            <RuleParameter Name="Index" Value="1076" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam56.ddlViolatorStateProvinceCode_Value_DDDWS" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="1058" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam57.ddlViolatorCountryCode_Value_DDDWS" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="1058" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam58.ddlViolatorFAACertificateTypeCodeID_Value" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; sel" />
+            <RuleParameter Name="Index" Value="1104" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam59.ctllpViolatorAviationEmployerName_DDDWS" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="1058" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam60.ctllpEquipmentInvolvedModelCode_DDDWS" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="1058" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam61.ctllpEquipmentInvolvedOwnerDesignatorCode_DDDWS" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="1058" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam62.ddlEquipmentInvolvedStateProvinceCode_Value_DDDWS" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="1058" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam63.ddlEquipmentInvolvedCountryCode_Value_DDDWS" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="1058" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam64.ctllpViolationAirportCodeModel_DDDWS" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="1058" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam65.ddlViolationStateProvinceCodeID_Value_DDDWS" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="1058" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam66.ddlRelatedDataTypeCodeID_Value" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; sel" />
+            <RuleParameter Name="Index" Value="1340" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam67.ddlRelatedDataSubTypeCodeID_Value" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; sel" />
+            <RuleParameter Name="Index" Value="1359" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam68.ddlRelatedDataCategoryCodeID_Value" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; sel" />
+            <RuleParameter Name="Index" Value="1384" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam69.ddlRelatedDataSourceCodeID_Value" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;20 " />
+            <RuleParameter Name="Index" Value="1363" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam70.ddlRelatedDataSDProblem_Value_DDDWS" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="1058" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam71.ddlInvestigatingOfficeCodeID_Value_DDDWS" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="1058" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam72.ctllpInvestigatingOfficeInspector_DDDWS" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="1058" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam73.ddlSigningRegionalOfficeCodeID_Value_VI" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="1503" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam74.ddlSigningRegionalOfficeCodeID_Value_DDDWS" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="1058" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam75.ddlSigningRegionalOfficeCodeID_Value$DDD$L" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="1503" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <QueryStringParameters>
+        <QueryStringParameter Name="EIRNo" Value="ClosedEIRList.EIRListForReOpenNSave#csv.EIRNumber" RecordedValue="4109079" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="Saved" Value="3" RecordedValue="3" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="ViolationDate" Value="9/1/2016" RecordedValue="9/1/2016" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+      <StringHttpBody ContentType="" InsertByteOrderMark="False">
+      </StringHttpBody>
+    </Request>
+    <Request Method="GET" Guid="ccab796e-80fe-48f2-8358-02daeaeac160" Version="1.1" Url="{{EISWebServer}}/DXR.axd" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=ClosedEIRList.EIRListForReOpenNSave#csv.EIRNumber" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="r" Value="1_124-g0V37" RecordedValue="1_124-g0V37" CorrelationBinding="{{QueryStringParam38.r}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="c1fe6449-e8f3-4e67-8941-071ef684b9f0" Version="1.1" Url="{{EISWebServer}}/DXR.axd" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=ClosedEIRList.EIRListForReOpenNSave#csv.EIRNumber" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="r" Value="1_124-g0V37" RecordedValue="1_124-g0V37" CorrelationBinding="{{QueryStringParam41.r}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="a4f000e3-dbea-4151-955f-5e1fcb4f051d" Version="1.1" Url="{{EISWebServer}}/DXR.axd" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=ClosedEIRList.EIRListForReOpenNSave#csv.EIRNumber" />
+        <Header Name="accept" Value="text/javascript, application/javascript, application/ecmascript, application/x-ecmascript, */*; q=0.01" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="r" Value="1_124-g0V37" RecordedValue="1_124-g0V37" CorrelationBinding="{{QueryStringParam46.r}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="_" Value="1474237210408" RecordedValue="1474237210408" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="8c4121e5-4eb0-4dfb-8750-d93c47509d64" Version="1.1" Url="{{EISWebServer}}/EIRManagement/GetInvestigationOfficeDescription" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=ClosedEIRList.EIRListForReOpenNSave#csv.EIRNumber" />
+        <Header Name="accept" Value="*/*" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="OfficeId" Value="8840" RecordedValue="8840" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+      <StringHttpBody ContentType="application/json" InsertByteOrderMark="False">
+      </StringHttpBody>
+    </Request>
+    <Request Method="POST" Guid="d220705a-3880-42ef-8e4a-76af6106232d" Version="1.1" Url="{{EISWebServer}}/EIRManagement/EIRButtonStatus/" ThinkTime="10" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=ClosedEIRList.EIRListForReOpenNSave#csv.EIRNumber" />
+        <Header Name="accept" Value="application/json, text/javascript, */*; q=0.01" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <StringHttpBody ContentType="application/json; charset=utf-8" InsertByteOrderMark="False">ewAiAEUASQBTAEkAbgB2AGUAcwB0AGkAZwBhAHQAaQBvAG4ASQBkACIAOgAiAEMAbABvAHMAZQBkAEUASQBSAEwAaQBzAHQALgBFAEkAUgBMAGkAcwB0AEYAbwByAFIAZQBPAHAAZQBuAE4AUwBhAHYAZQAjAGMAcwB2AC4ARQBJAFIATgB1AG0AYgBlAHIAIgB9AA==</StringHttpBody>
+    </Request>
+    <Request Method="POST" Guid="d4f3d195-5316-4a55-9cab-03b8b9d4b4a5" Version="1.1" Url="{{EISWebServer}}/EIRManagement/SaveEIR" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=ClosedEIRList.EIRListForReOpenNSave#csv.EIRNumber" />
+        <Header Name="accept" Value="*/*" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="ActiveSection" Value="{{$HIDDEN1.ActiveSection}}" RecordedValue="0" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="EISInvestigationID" Value="{{$HIDDEN1.EISInvestigationID}}" RecordedValue="4109079" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CurrentDatetime" Value="{{$HIDDEN1.CurrentDatetime}}" RecordedValue="9/18/2016" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ReportNumber" Value="{{$HIDDEN1.ReportNumber}}" RecordedValue="2016ACRC0025" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="StatusCode" Value="REOPEN" RecordedValue="REOPEN" CorrelationBinding="{{FormPostParam50.StatusCode}}" UrlEncode="True" />
+        <FormPostParameter Name="StatusCodeFromFinalAction" Value="{{$HIDDEN1.StatusCodeFromFinalAction}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="RecordOwnerOfficeCodeID" Value="{{$HIDDEN1.RecordOwnerOfficeCodeID}}" RecordedValue="8840" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="EditableEIRForm" Value="True" RecordedValue="True" CorrelationBinding="{{FormPostParam18.EditableEIRForm}}" UrlEncode="True" />
+        <FormPostParameter Name="OMST_CAIS_CERT_PREF" Value="{{$HIDDEN1.OMST_CAIS_CERT_PREF}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="OMST_CAIS_CERT_CORE" Value="{{$HIDDEN1.OMST_CAIS_CERT_CORE}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="OMST_CAIS_CERT_SUFF" Value="{{$HIDDEN1.OMST_CAIS_CERT_SUFF}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Saved" Value="3" RecordedValue="3" CorrelationBinding="{{FormPostParam19.Saved}}" UrlEncode="True" />
+        <FormPostParameter Name="IsIFOFilledToEnableRequiredCheck" Value="{{$HIDDEN1.IsIFOFilledToEnableRequiredCheck}}" RecordedValue="true" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IsIFOFilledAndNonLegDataToEnableRequiredCheck" Value="{{$HIDDEN1.IsIFOFilledAndNonLegDataToEnableRequiredCheck}}" RecordedValue="true" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="LegacyDataFlag" Value="{{$HIDDEN1.LegacyDataFlag}}" RecordedValue="False" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IsBusinessConcernRequired" Value="{{$HIDDEN1.IsBusinessConcernRequired}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="StatusCode" Value="REOPEN" RecordedValue="REOPEN" CorrelationBinding="{{FormPostParam51.StatusCode}}" UrlEncode="True" />
+        <FormPostParameter Name="tabsEIRSectionATI" Value="{{$HIDDEN1.tabsEIRSectionATI}}" RecordedValue="0" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="DesignatorCodeValidation" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam20.DesignatorCodeValidation}}" UrlEncode="True" />
+        <FormPostParameter Name="AirmanCertificateNumberValidation" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam21.AirmanCertificateNumberValidation}}" UrlEncode="True" />
+        <FormPostParameter Name="ShowDisabledView" Value="False" RecordedValue="False" CorrelationBinding="{{FormPostParam22.ShowDisabledView}}" UrlEncode="True" />
+        <FormPostParameter Name="EISReportNumberRegionCode" Value="AC" RecordedValue="AC" CorrelationBinding="{{FormPostParam3.EISReportNumberRegionCode}}" UrlEncode="True" />
+        <FormPostParameter Name="EISFieldOffice2DigitNumber" Value="RC" RecordedValue="RC" CorrelationBinding="{{FormPostParam4.EISFieldOffice2DigitNumber}}" UrlEncode="True" />
+        <FormPostParameter Name="SelfDisclosureValidationForRegionAndSource" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam23.SelfDisclosureValidationForRegionAndSource}}" UrlEncode="True" />
+        <FormPostParameter Name="ViolatorDesignatorRequiredForCertificateType" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam24.ViolatorDesignatorRequiredForCertificateType}}" UrlEncode="True" />
+        <FormPostParameter Name="EquipmentInvolvedModelCodeValidationForEquipType" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam25.EquipmentInvolvedModelCodeValidationForEquipType}}" UrlEncode="True" />
+        <FormPostParameter Name="EquipInvOwnerInfoValidationBySourceCode" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam26.EquipInvOwnerInfoValidationBySourceCode}}" UrlEncode="True" />
+        <FormPostParameter Name="EquipInvOwnerInfoValidationForNameSameAsViolator" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam27.EquipInvOwnerInfoValidationForNameSameAsViolator}}" UrlEncode="True" />
+        <FormPostParameter Name="IsFAAAcceptedDateGreaterThanKnownToFAADateCheck" Value="1" RecordedValue="1" CorrelationBinding="{{FormPostParam28.IsFAAAcceptedDateGreaterThanKnownToFAADateCheck}}" UrlEncode="True" />
+        <FormPostParameter Name="InvestigatingOfficeInspectorCodeRequiredForSecurity" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam29.InvestigatingOfficeInspectorCodeRequiredForSecurity}}" UrlEncode="True" />
+        <FormPostParameter Name="InvestigatingOfficeInspectorRequiredCheck" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ActionSanctionSDYesValidation" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam30.ActionSanctionSDYesValidation}}" UrlEncode="True" />
+        <FormPostParameter Name="SecurityProgramValidation" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam31.SecurityProgramValidation}}" UrlEncode="True" />
+        <FormPostParameter Name="RecordOwnerOfficeCode" Value="{{$HIDDEN1.RecordOwnerOfficeCode}}" RecordedValue="ACRC" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ViolationDateKnownToFAAForValidation" Value="9/2/2016" RecordedValue="9/2/2016" CorrelationBinding="{{FormPostParam32.ViolationDateKnownToFAAForValidation}}" UrlEncode="True" />
+        <FormPostParameter Name="HasASHSecurityPermission" Value="{{$HIDDEN1.HasASHSecurityPermission}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="HasLegalOfficePermission" Value="{{$HIDDEN1.HasLegalOfficePermission}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="HasRegionalOfficePermission" Value="{{$HIDDEN1.HasRegionalOfficePermission}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="HasIFOfficePermission" Value="{{$HIDDEN1.HasIFOfficePermission}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="HasAirCertificatePermission" Value="{{$HIDDEN1.HasAirCertificatePermission}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="HasMedicalPermission" Value="{{$HIDDEN1.HasMedicalPermission}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="HasSelfDisclosurePermission" Value="{{$HIDDEN1.HasSelfDisclosurePermission}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="HasQuestion30Permission" Value="{{$HIDDEN1.HasQuestion30Permission}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IsRelatedReportNoValid" Value="{{$HIDDEN1.IsRelatedReportNoValid}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CurrentUserOfficeRoleId" Value="{{$HIDDEN1.CurrentUserOfficeRoleId}}" RecordedValue="1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CurrentOfficeCode" Value="{{$HIDDEN1.CurrentOfficeCode}}" RecordedValue="ACRC" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="OpenCloseIndicator" Value="A" RecordedValue="A" CorrelationBinding="{{FormPostParam52.OpenCloseIndicator}}" UrlEncode="True" />
+        <FormPostParameter Name="TransferIndicator" Value="{{$HIDDEN1.TransferIndicator}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CurrentRecordOwnerUserLevel" Value="{{$HIDDEN1.CurrentRecordOwnerUserLevel}}" RecordedValue="13" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="FieldOfficeReceivedDate" Value="{{$HIDDEN1.FieldOfficeReceivedDate}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="RegionReceivedDate" Value="{{$HIDDEN1.RegionReceivedDate}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="OASISFlag" Value="{{$HIDDEN1.OASISFlag}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="OriginRecordOwnerUserLevel" Value="{{$HIDDEN1.OriginRecordOwnerUserLevel}}" RecordedValue="13" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="HasQuestion18Permission" Value="{{$HIDDEN1.HasQuestion18Permission}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="HasQuestion25Permission" Value="{{$HIDDEN1.HasQuestion25Permission}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="HasQuestion29Permission" Value="{{$HIDDEN1.HasQuestion29Permission}}" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="EmergencyOrder" Value="{{$HIDDEN1.EmergencyOrder}}" RecordedValue="0" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IsDowngraded" Value="{{$HIDDEN1.IsDowngraded}}" RecordedValue="False" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlSelfDisclosureReadOnlyFlag_Value" Value="{{$HIDDEN1.ddlSelfDisclosureReadOnlyFlag_Value}}" RecordedValue="0" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="DowngradeWarningMessage" Value="{{$HIDDEN1.DowngradeWarningMessage}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="LegalCounselReceiptDateTmp" Value="{{$HIDDEN1.LegalCounselReceiptDateTmp}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="EntryDate" Value="{{$HIDDEN1.EntryDate}}" RecordedValue="9/14/2016 12:01:03 PM" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="EISYear" Value="2016" RecordedValue="2016" CorrelationBinding="{{FormPostParam5.EISYear}}" UrlEncode="True" />
+        <FormPostParameter Name="ddlEISFieldOffice_Value" Value="8840" RecordedValue="8840" CorrelationBinding="{{FormPostParam33.ddlEISFieldOffice_Value}}" UrlEncode="True" />
+        <FormPostParameter Name="ddlEISFieldOffice_String" Value="ACRC" RecordedValue="ACRC" CorrelationBinding="{{FormPostParam6.ddlEISFieldOffice_String}}" UrlEncode="True" />
+        <FormPostParameter Name="EISSequenceNumber" Value="0025" RecordedValue="0025" CorrelationBinding="{{FormPostParam7.EISSequenceNumber}}" UrlEncode="True" />
+        <FormPostParameter Name="EntryDateForDisplay" Value="9/14/2016" RecordedValue="9/14/2016" CorrelationBinding="{{FormPostParam8.EntryDateForDisplay}}" UrlEncode="True" />
+        <FormPostParameter Name="DateOfViolation" Value="9/1/2016" RecordedValue="9/1/2016" CorrelationBinding="{{FormPostParam9.DateOfViolation}}" UrlEncode="True" />
+        <FormPostParameter Name="InvestigationStartDate" Value="9/2/2016" RecordedValue="9/2/2016" CorrelationBinding="{{FormPostParam10.InvestigationStartDate}}" UrlEncode="True" />
+        <FormPostParameter Name="RelatedEISInvestigationID" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlSelfDisclosureFlag_Value" Value="0" RecordedValue="0" CorrelationBinding="{{FormPostParam34.ddlSelfDisclosureFlag_Value}}" UrlEncode="True" />
+        <FormPostParameter Name="ddlSDIdentityCodeList_Value" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlSDIdentityCode_Value" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpViolatorDesignatorCode_VI" Value="{{$HIDDEN1.ctllpViolatorDesignatorCode_VI}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpViolatorDesignatorCode" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpViolatorDesignatorCode_DDDWS" Value="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" RecordedValue="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" CorrelationBinding="{{FormPostParam53.ctllpViolatorDesignatorCode_DDDWS}}" UrlEncode="True" />
+        <FormPostParameter Name="ctllpViolatorDesignatorCode_DDD_LDeletedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpViolatorDesignatorCode_DDD_LInsertedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpViolatorDesignatorCode_DDD_LCustomCallback" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpViolatorDesignatorCode$DDD$L" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ViolatorOperatorKind1" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpAirmanCertificateNumber_VI" Value="{{$HIDDEN1.ctllpAirmanCertificateNumber_VI}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpAirmanCertificateNumber" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpAirmanCertificateNumber_DDDWS" Value="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" RecordedValue="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" CorrelationBinding="{{FormPostParam54.ctllpAirmanCertificateNumber_DDDWS}}" UrlEncode="True" />
+        <FormPostParameter Name="ctllpAirmanCertificateNumber_DDD_LDeletedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpAirmanCertificateNumber_DDD_LInsertedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpAirmanCertificateNumber_DDD_LCustomCallback" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpAirmanCertificateNumber$DDD$L" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="AirmanCertificateNumber" Value="{{$HIDDEN1.AirmanCertificateNumber}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IsGenderRequired" Value="{{$HIDDEN1.IsGenderRequired}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IsViolatorDOBRequired" Value="{{$HIDDEN1.IsViolatorDOBRequired}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IsFAACertificateNumberRequired" Value="{{$HIDDEN1.IsFAACertificateNumberRequired}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpViolatorAviationEmployerName_input" Value="{{$HIDDEN1.ctllpViolatorAviationEmployerName_input}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ViolatorName" Value="MAC RAN" RecordedValue="MAC RAN" CorrelationBinding="{{FormPostParam11.ViolatorName}}" UrlEncode="True" />
+        <FormPostParameter Name="ViolatorDBAorAKAName" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolatorBusinessConcernCode_Value" Value="73" RecordedValue="73" CorrelationBinding="{{FormPostParam55.ddlViolatorBusinessConcernCode_Value}}" UrlEncode="True" />
+        <FormPostParameter Name="ViolatorAddressLine1" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ViolatorAddressLine2" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ViolatorAddressLine3" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ViolatorCity" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolatorStateProvinceCode_Value_VI" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolatorStateProvinceCode_Value" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolatorStateProvinceCode_Value_DDDWS" Value="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" RecordedValue="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" CorrelationBinding="{{FormPostParam56.ddlViolatorStateProvinceCode_Value_DDDWS}}" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolatorStateProvinceCode_Value_DDD_LDeletedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolatorStateProvinceCode_Value_DDD_LInsertedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolatorStateProvinceCode_Value_DDD_LCustomCallback" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolatorStateProvinceCode_Value$DDD$L" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolatorCountryCode_Value_VI" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolatorCountryCode_Value" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolatorCountryCode_Value_DDDWS" Value="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" RecordedValue="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" CorrelationBinding="{{FormPostParam57.ddlViolatorCountryCode_Value_DDDWS}}" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolatorCountryCode_Value_DDD_LDeletedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolatorCountryCode_Value_DDD_LInsertedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolatorCountryCode_Value_DDD_LCustomCallback" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolatorCountryCode_Value$DDD$L" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ViolatorZIPPostalCode" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ViolatorPhone_Value_Raw" Value="{{$HIDDEN1.ViolatorPhone_Value_Raw}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ViolatorPhone_Value" Value="(___)___-____" RecordedValue="(___)___-____" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ViolatorPhone_Value$CVS" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ViolatorDOB" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolatorGenderCode_Value" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ViolatorFAACertificateNumber" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ViolatorCAISCertificateNumber" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolatorFAACertificateTypeCodeID_Value" Value="1304" RecordedValue="1304" CorrelationBinding="{{FormPostParam58.ddlViolatorFAACertificateTypeCodeID_Value}}" UrlEncode="True" />
+        <FormPostParameter Name="ViolatorCertificatingRegion" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpViolatorAviationEmployerName_VI" Value="{{$HIDDEN1.ctllpViolatorAviationEmployerName_VI}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpViolatorAviationEmployerName" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpViolatorAviationEmployerName_DDDWS" Value="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" RecordedValue="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" CorrelationBinding="{{FormPostParam59.ctllpViolatorAviationEmployerName_DDDWS}}" UrlEncode="True" />
+        <FormPostParameter Name="ctllpViolatorAviationEmployerName_DDD_LDeletedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpViolatorAviationEmployerName_DDD_LInsertedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpViolatorAviationEmployerName_DDD_LCustomCallback" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpViolatorAviationEmployerName$DDD$L" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="EquipmentInvolvedModelCode" Value="{{$HIDDEN1.EquipmentInvolvedModelCode}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="EquipmentInvolvedModelCodeValidation" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam35.EquipmentInvolvedModelCodeValidation}}" UrlEncode="True" />
+        <FormPostParameter Name="EquipmentInvolvedOwnerDesignatorCodeValidation" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam36.EquipmentInvolvedOwnerDesignatorCodeValidation}}" UrlEncode="True" />
+        <FormPostParameter Name="IsInvolvedIdentificationRequired" Value="{{$HIDDEN1.IsInvolvedIdentificationRequired}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlEquipmentTypeCodeID_Value" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="EquipmentInvolvedMake" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpEquipmentInvolvedModelCode_VI" Value="{{$HIDDEN1.ctllpEquipmentInvolvedModelCode_VI}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpEquipmentInvolvedModelCode" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpEquipmentInvolvedModelCode_DDDWS" Value="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" RecordedValue="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" CorrelationBinding="{{FormPostParam60.ctllpEquipmentInvolvedModelCode_DDDWS}}" UrlEncode="True" />
+        <FormPostParameter Name="ctllpEquipmentInvolvedModelCode_DDD_LDeletedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpEquipmentInvolvedModelCode_DDD_LInsertedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpEquipmentInvolvedModelCode_DDD_LCustomCallback" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpEquipmentInvolvedModelCode$DDD$L" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="EquipmentInvolvedGroup" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="EquipmentInvolvedIdentificationNo" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="EquipmentInvolvedAircraftSerial" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="chkSameasEquipmentInvolved" Value="{{$HIDDEN1.chkSameasEquipmentInvolved}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpEquipmentInvolvedOwnerDesignatorCode_VI" Value="{{$HIDDEN1.ctllpEquipmentInvolvedOwnerDesignatorCode_VI}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpEquipmentInvolvedOwnerDesignatorCode" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpEquipmentInvolvedOwnerDesignatorCode_DDDWS" Value="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" RecordedValue="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" CorrelationBinding="{{FormPostParam61.ctllpEquipmentInvolvedOwnerDesignatorCode_DDDWS}}" UrlEncode="True" />
+        <FormPostParameter Name="ctllpEquipmentInvolvedOwnerDesignatorCode_DDD_LDeletedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpEquipmentInvolvedOwnerDesignatorCode_DDD_LInsertedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpEquipmentInvolvedOwnerDesignatorCode_DDD_LCustomCallback" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpEquipmentInvolvedOwnerDesignatorCode$DDD$L" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="EquipmentInvolvedOwnerName" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="EquipmentInvolvedAddressLine1" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="EquipmentInvolvedAddressLine2" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="EquipmentInvolvedAddressLine3" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="EquipmentInvolvedCity" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlEquipmentInvolvedStateProvinceCode_Value_VI" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlEquipmentInvolvedStateProvinceCode_Value" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlEquipmentInvolvedStateProvinceCode_Value_DDDWS" Value="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" RecordedValue="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" CorrelationBinding="{{FormPostParam62.ddlEquipmentInvolvedStateProvinceCode_Value_DDDWS}}" UrlEncode="True" />
+        <FormPostParameter Name="ddlEquipmentInvolvedStateProvinceCode_Value_DDD_LDeletedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlEquipmentInvolvedStateProvinceCode_Value_DDD_LInsertedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlEquipmentInvolvedStateProvinceCode_Value_DDD_LCustomCallback" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlEquipmentInvolvedStateProvinceCode_Value$DDD$L" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlEquipmentInvolvedCountryCode_Value_VI" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlEquipmentInvolvedCountryCode_Value" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlEquipmentInvolvedCountryCode_Value_DDDWS" Value="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" RecordedValue="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" CorrelationBinding="{{FormPostParam63.ddlEquipmentInvolvedCountryCode_Value_DDDWS}}" UrlEncode="True" />
+        <FormPostParameter Name="ddlEquipmentInvolvedCountryCode_Value_DDD_LDeletedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlEquipmentInvolvedCountryCode_Value_DDD_LInsertedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlEquipmentInvolvedCountryCode_Value_DDD_LCustomCallback" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlEquipmentInvolvedCountryCode_Value$DDD$L" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="EquipmentInvolvedZIPPostalCode" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="InitiatingOfficeRegulationViolatedHiddenValue" Value="{{$HIDDEN1.InitiatingOfficeRegulationViolatedHiddenValue}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ViolationAirportCode" Value="{{$HIDDEN1.ViolationAirportCode}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ViolationAirportCodeValidation" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam37.ViolationAirportCodeValidation}}" UrlEncode="True" />
+        <FormPostParameter Name="IFORegulationValidation" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam38.IFORegulationValidation}}" UrlEncode="True" />
+        <FormPostParameter Name="ViolationDate" Value="9/1/2016" RecordedValue="9/1/2016" CorrelationBinding="{{FormPostParam12.ViolationDate}}" UrlEncode="True" />
+        <FormPostParameter Name="ViolationTime_hours" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ViolationTime_minutes" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ViolationTime_hours_value" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ViolationTime_minutes_value" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ViolationDateKnownToFAA" Value="9/2/2016" RecordedValue="9/2/2016" CorrelationBinding="{{FormPostParam13.ViolationDateKnownToFAA}}" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolationRegionOfDiscoveryCode_Value" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ViolationLocation" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpViolationAirportCodeModel_VI" Value="{{$HIDDEN1.ctllpViolationAirportCodeModel_VI}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpViolationAirportCodeModel" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpViolationAirportCodeModel_DDDWS" Value="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" RecordedValue="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" CorrelationBinding="{{FormPostParam64.ctllpViolationAirportCodeModel_DDDWS}}" UrlEncode="True" />
+        <FormPostParameter Name="ctllpViolationAirportCodeModel_DDD_LDeletedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpViolationAirportCodeModel_DDD_LInsertedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpViolationAirportCodeModel_DDD_LCustomCallback" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpViolationAirportCodeModel$DDD$L" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="chkManualEntryAirportInfo" Value="{{$HIDDEN1.chkManualEntryAirportInfo}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ViolationAirportName" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ViolationAirportCity" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolationStateProvinceCodeID_Value_VI" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolationStateProvinceCodeID_Value" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolationStateProvinceCodeID_Value_DDDWS" Value="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" RecordedValue="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" CorrelationBinding="{{FormPostParam65.ddlViolationStateProvinceCodeID_Value_DDDWS}}" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolationStateProvinceCodeID_Value_DDD_LDeletedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolationStateProvinceCodeID_Value_DDD_LInsertedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolationStateProvinceCodeID_Value_DDD_LCustomCallback" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlViolationStateProvinceCodeID_Value$DDD$L" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ViolationSecurityCode" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="RegulationViolatedGrid_DXPagerBottom_PSPSI" Value="0" RecordedValue="0" CorrelationBinding="{{FormPostParam39.RegulationViolatedGrid_DXPagerBottom_PSPSI}}" UrlEncode="True" />
+        <FormPostParameter Name="RegulationViolatedGrid$DXSelInput" Value="{{$HIDDEN1.RegulationViolatedGrid$DXSelInput}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="RegulationViolatedGrid$DXKVInput" Value="{{$HIDDEN1.RegulationViolatedGrid$DXKVInput}}" RecordedValue="[]" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="RegulationViolatedGrid$CallbackState" Value="{{$HIDDEN1.RegulationViolatedGrid$CallbackState}}" RecordedValue="BwIHAQIFU3RhdGUHYQcEBv//AgAHAAIBBwECAQcCAgEHAAcABwAHAAIABQAAAIAJAiRJbml0aWF0aW5nT2ZmaWNlUmVndWxhdGlvblZpb2xhdGVkSUQJAgACAAMHBAIABwACAQcABwACAQcABwACEEZpbHRlckV4cHJlc3Npb24HAgA=" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SecurityProgramHiddenValue" Value="{{$HIDDEN1.SecurityProgramHiddenValue}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlRelatedDataTypeCodeID_Value" Value="535" RecordedValue="535" CorrelationBinding="{{FormPostParam66.ddlRelatedDataTypeCodeID_Value}}" UrlEncode="True" />
+        <FormPostParameter Name="ddlRelatedDataSubTypeCodeID_Value" Value="1103" RecordedValue="1103" CorrelationBinding="{{FormPostParam67.ddlRelatedDataSubTypeCodeID_Value}}" UrlEncode="True" />
+        <FormPostParameter Name="ddlRelatedDataCategoryCodeID_Value" Value="715" RecordedValue="715" CorrelationBinding="{{FormPostParam68.ddlRelatedDataCategoryCodeID_Value}}" UrlEncode="True" />
+        <FormPostParameter Name="ddlRelatedDataSourceCodeID_Value" Value="1107" RecordedValue="1107" CorrelationBinding="{{FormPostParam69.ddlRelatedDataSourceCodeID_Value}}" UrlEncode="True" />
+        <FormPostParameter Name="RelatedDataSourceCode_ByOfficeCode" Value="{{$HIDDEN1.RelatedDataSourceCode_ByOfficeCode}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlRelatedDataAccidentCodeID_Value" Value="96" RecordedValue="96" CorrelationBinding="{{FormPostParam40.ddlRelatedDataAccidentCodeID_Value}}" UrlEncode="True" />
+        <FormPostParameter Name="SecurityProgramGrid_DXPagerBottom_PSPSI" Value="0" RecordedValue="0" CorrelationBinding="{{FormPostParam41.SecurityProgramGrid_DXPagerBottom_PSPSI}}" UrlEncode="True" />
+        <FormPostParameter Name="SecurityProgramGrid$DXSelInput" Value="{{$HIDDEN1.SecurityProgramGrid$DXSelInput}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SecurityProgramGrid$DXKVInput" Value="{{$HIDDEN1.SecurityProgramGrid$DXKVInput}}" RecordedValue="[]" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SecurityProgramGrid$CallbackState" Value="{{$HIDDEN1.SecurityProgramGrid$CallbackState}}" RecordedValue="BwIHAQIFU3RhdGUHTwcEBv//AgAG//8CAAcAAgEHAQIBBwAHAAcABwACAAUAAACACQIRU2VjdXJpdHlQcm9ncmFtSUQJAgACAAMHBAIABwACAQcABwACAQcABwACEEZpbHRlckV4cHJlc3Npb24HAgA=" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SDDateFAAAcceptedDate" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlRelatedDataSDProblem_Value_VI" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlRelatedDataSDProblem_Value" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlRelatedDataSDProblem_Value_DDDWS" Value="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" RecordedValue="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" CorrelationBinding="{{FormPostParam70.ddlRelatedDataSDProblem_Value_DDDWS}}" UrlEncode="True" />
+        <FormPostParameter Name="ddlRelatedDataSDProblem_Value_DDD_LDeletedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlRelatedDataSDProblem_Value_DDD_LInsertedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlRelatedDataSDProblem_Value_DDD_LCustomCallback" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlRelatedDataSDProblem_Value$DDD$L" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="SelfDisclosureProblemDescription" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="RegionalRegulationViolatedHidden" Value="{{$HIDDEN1.RegionalRegulationViolatedHidden}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="RegionalActionAndSanctionViolatedHidden" Value="{{$HIDDEN1.RegionalActionAndSanctionViolatedHidden}}" RecordedValue="224155~0~647~~~~~224616|" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IFOActionAndSanctionHidden" Value="{{$HIDDEN1.IFOActionAndSanctionHidden}}" RecordedValue="224616~0~647~~~~|" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="InvestigatingOfficeInspectorCode" Value="{{$HIDDEN1.InvestigatingOfficeInspectorCode}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="InvestigatingOfficeInspectorCodeValidation" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam42.InvestigatingOfficeInspectorCodeValidation}}" UrlEncode="True" />
+        <FormPostParameter Name="IsAFSOfficeType" Value="{{$HIDDEN1.IsAFSOfficeType}}" RecordedValue="False" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IsIOSignedOutDateValid" Value="{{$HIDDEN1.IsIOSignedOutDateValid}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IsROReceivedDateValid" Value="{{$HIDDEN1.IsROReceivedDateValid}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IsROSigningDateValid" Value="{{$HIDDEN1.IsROSigningDateValid}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="InvestigatingOfficeSignedOutDateTemp" Value="9/2/2016" RecordedValue="9/2/2016" CorrelationBinding="{{FormPostParam43.InvestigatingOfficeSignedOutDateTemp}}" UrlEncode="True" />
+        <FormPostParameter Name="TransferButtonClicked_YESNO" Value="{{$HIDDEN1.TransferButtonClicked_YESNO}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IOSignedOutDateHidden" Value="{{$HIDDEN1.IOSignedOutDateHidden}}" RecordedValue="9/2/2016 12:00:00 AM" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ROSigningDateHidden" Value="{{$HIDDEN1.ROSigningDateHidden}}" RecordedValue="9/2/2016 12:00:00 AM" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="RegionalRegulationValidation" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam44.RegionalRegulationValidation}}" UrlEncode="True" />
+        <FormPostParameter Name="IFOActionAndSanctionGrid$DXSelInput" Value="{{$HIDDEN1.IFOActionAndSanctionGrid$DXSelInput}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IFOActionAndSanctionGrid$DXKVInput" Value="{{$HIDDEN1.IFOActionAndSanctionGrid$DXKVInput}}" RecordedValue="['224616']" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="IFOActionAndSanctionGrid$CallbackState" Value="{{$HIDDEN1.IFOActionAndSanctionGrid$CallbackState}}" RecordedValue="BwIHAQIFU3RhdGUHZgcGBv//AgAHAAIBBwECAQcCAgEG//8CAAcDAgEHAAcABwAHAAIABQAAAIAJAiBJbml0aWF0aW5nT2ZmaWNlQWN0aW9uU2FuY3Rpb25JRAkCAAIAAwcEAgAHAAIBBwEHAAIBBwAHAAIQRmlsdGVyRXhwcmVzc2lvbgcCAA==" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="InvestigatingOfficeSignedOutDate" Value="9/2/2016" RecordedValue="9/2/2016" CorrelationBinding="{{FormPostParam14.InvestigatingOfficeSignedOutDate}}" UrlEncode="True" />
+        <FormPostParameter Name="ddlInvestigatingOfficeCodeID_Value_VI" Value="8840" RecordedValue="8840" CorrelationBinding="{{FormPostParam45.ddlInvestigatingOfficeCodeID_Value_VI}}" UrlEncode="True" />
+        <FormPostParameter Name="ddlInvestigatingOfficeCodeID_Value" Value="ACRC-AERONAUTICAL CENTER COUNSEL OK" RecordedValue="ACRC-AERONAUTICAL CENTER COUNSEL OK" CorrelationBinding="{{FormPostParam46.ddlInvestigatingOfficeCodeID_Value}}" UrlEncode="True" />
+        <FormPostParameter Name="ddlInvestigatingOfficeCodeID_Value_DDDWS" Value="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" RecordedValue="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" CorrelationBinding="{{FormPostParam71.ddlInvestigatingOfficeCodeID_Value_DDDWS}}" UrlEncode="True" />
+        <FormPostParameter Name="ddlInvestigatingOfficeCodeID_Value_DDD_LDeletedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlInvestigatingOfficeCodeID_Value_DDD_LInsertedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlInvestigatingOfficeCodeID_Value_DDD_LCustomCallback" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlInvestigatingOfficeCodeID_Value$DDD$L" Value="8840" RecordedValue="8840" CorrelationBinding="{{FormPostParam47.ddlInvestigatingOfficeCodeID_Value$DDD$L}}" UrlEncode="True" />
+        <FormPostParameter Name="ctllpInvestigatingOfficeInspector_VI" Value="{{$HIDDEN1.ctllpInvestigatingOfficeInspector_VI}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpInvestigatingOfficeInspector" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpInvestigatingOfficeInspector_DDDWS" Value="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" RecordedValue="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" CorrelationBinding="{{FormPostParam72.ctllpInvestigatingOfficeInspector_DDDWS}}" UrlEncode="True" />
+        <FormPostParameter Name="ctllpInvestigatingOfficeInspector_DDD_LDeletedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpInvestigatingOfficeInspector_DDD_LInsertedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpInvestigatingOfficeInspector_DDD_LCustomCallback" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctllpInvestigatingOfficeInspector$DDD$L" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="InvestigatingOfficeInspectorName" Value="RI" RecordedValue="RI" CorrelationBinding="{{FormPostParam15.InvestigatingOfficeInspectorName}}" UrlEncode="True" />
+        <FormPostParameter Name="InvestigatingOfficeRemarks" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="RegionalOfficeReceivedDate" Value="9/2/2016" RecordedValue="9/2/2016" CorrelationBinding="{{FormPostParam16.RegionalOfficeReceivedDate}}" UrlEncode="True" />
+        <FormPostParameter Name="RegionalRegulationViolatedGrid_DXPagerBottom_PSPSI" Value="0" RecordedValue="0" CorrelationBinding="{{FormPostParam48.RegionalRegulationViolatedGrid_DXPagerBottom_PSPSI}}" UrlEncode="True" />
+        <FormPostParameter Name="RegionalRegulationViolatedGrid$DXSelInput" Value="{{$HIDDEN1.RegionalRegulationViolatedGrid$DXSelInput}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="RegionalRegulationViolatedGrid$DXKVInput" Value="{{$HIDDEN1.RegionalRegulationViolatedGrid$DXKVInput}}" RecordedValue="[]" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="RegionalRegulationViolatedGrid$CallbackState" Value="{{$HIDDEN1.RegionalRegulationViolatedGrid$CallbackState}}" RecordedValue="BwIHAQIFU3RhdGUHWQcEBv//AgAHAAIBBwECAQcCAgEHAAcABwAHAAIABQAAAIAJAhxSZWdpb25hbFJlZ3VsYXRpb25WaW9sYXRlZElECQIAAgADBwQCAAcAAgEHAAcAAgEHAAcAAhBGaWx0ZXJFeHByZXNzaW9uBwIA" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="RegionalActionAndSanctionGrid$DXSelInput" Value="{{$HIDDEN1.RegionalActionAndSanctionGrid$DXSelInput}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="RegionalActionAndSanctionGrid$DXKVInput" Value="{{$HIDDEN1.RegionalActionAndSanctionGrid$DXKVInput}}" RecordedValue="['224155']" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="RegionalActionAndSanctionGrid$CallbackState" Value="{{$HIDDEN1.RegionalActionAndSanctionGrid$CallbackState}}" RecordedValue="BwIHAQIFU3RhdGUHXgcGBv//AgAHAAIBBwECAQcCAgEG//8CAAcDAgEHAAcABwAHAAIABQAAAIAJAhhSZWdpb25hbEFjdGlvblNhbmN0aW9uSUQJAgACAAMHBAIABwACAQcBBwACAQcABwACEEZpbHRlckV4cHJlc3Npb24HAgA=" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="RegionalOfficeSigningDate" Value="9/2/2016" RecordedValue="9/2/2016" CorrelationBinding="{{FormPostParam17.RegionalOfficeSigningDate}}" UrlEncode="True" />
+        <FormPostParameter Name="ddlSigningRegionalOfficeCodeID_Value_VI" Value="368" RecordedValue="368" CorrelationBinding="{{FormPostParam73.ddlSigningRegionalOfficeCodeID_Value_VI}}" UrlEncode="True" />
+        <FormPostParameter Name="ddlSigningRegionalOfficeCodeID_Value" Value="AC-AERONAUTICAL CENTER" RecordedValue="AC-AERONAUTICAL CENTER" CorrelationBinding="{{FormPostParam49.ddlSigningRegionalOfficeCodeID_Value}}" UrlEncode="True" />
+        <FormPostParameter Name="ddlSigningRegionalOfficeCodeID_Value_DDDWS" Value="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" RecordedValue="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:0" CorrelationBinding="{{FormPostParam74.ddlSigningRegionalOfficeCodeID_Value_DDDWS}}" UrlEncode="True" />
+        <FormPostParameter Name="ddlSigningRegionalOfficeCodeID_Value_DDD_LDeletedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlSigningRegionalOfficeCodeID_Value_DDD_LInsertedItems" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlSigningRegionalOfficeCodeID_Value_DDD_LCustomCallback" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ddlSigningRegionalOfficeCodeID_Value$DDD$L" Value="368" RecordedValue="368" CorrelationBinding="{{FormPostParam75.ddlSigningRegionalOfficeCodeID_Value$DDD$L}}" UrlEncode="True" />
+        <FormPostParameter Name="RegionalOfficeRemarks" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="DXScript" Value="1_142,1_80,1_135,1_136,1_133,14_23,14_19,1_98,1_105,1_101,1_91,14_0,1_104,1_84,1_109,1_92,14_1,1_77,1_128,1_126,1_94,1_97,1_95,1_96,1_106,14_4,1_100,1_117,1_103,14_12,14_13,1_102,1_129,1_107,1_90,1_137,1_114,1_113,14_10,1_119,1_127,14_16" RecordedValue="1_142,1_80,1_135,1_136,1_133,14_23,14_19,1_98,1_105,1_101,1_91,14_0,1_104,1_84,1_109,1_92,14_1,1_77,1_128,1_126,1_94,1_97,1_95,1_96,1_106,14_4,1_100,1_117,1_103,14_12,14_13,1_102,1_129,1_107,1_90,1_137,1_114,1_113,14_10,1_119,1_127,14_16" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="DXMVCEditorsValues" Value="{&quot;ViolatorPhone_Value&quot;:null,&quot;ctllpViolatorDesignatorCode_DDD_L&quot;:[],&quot;ctllpViolatorDesignatorCode&quot;:null,&quot;ctllpAirmanCertificateNumber_DDD_L&quot;:[],&quot;ctllpAirmanCertificateNumber&quot;:null,&quot;ddlViolatorStateProvinceCode_Value_DDD_L&quot;:[],&quot;ddlViolatorStateProvinceCode_Value&quot;:null,&quot;ddlViolatorCountryCode_Value_DDD_L&quot;:[],&quot;ddlViolatorCountryCode_Value&quot;:null,&quot;ctllpViolatorAviationEmployerName_DDD_L&quot;:[],&quot;ctllpViolatorAviationEmployerName&quot;:null,&quot;ctllpEquipmentInvolvedModelCode_DDD_L&quot;:[],&quot;ctllpEquipmentInvolvedModelCode&quot;:null,&quot;ctllpEquipmentInvolvedOwnerDesignatorCode_DDD_L&quot;:[],&quot;ctllpEquipmentInvolvedOwnerDesignatorCode&quot;:null,&quot;ddlEquipmentInvolvedStateProvinceCode_Value_DDD_L&quot;:[],&quot;ddlEquipmentInvolvedStateProvinceCode_Value&quot;:null,&quot;ddlEquipmentInvolvedCountryCode_Value_DDD_L&quot;:[],&quot;ddlEquipmentInvolvedCountryCode_Value&quot;:null,&quot;ctllpViolationAirportCodeModel_DDD_L&quot;:[],&quot;ctllpViolationAirportCodeModel&quot;:null,&quot;ddlViolationStateProvinceCodeID_Value_DDD_L&quot;:[],&quot;ddlViolationStateProvinceCodeID_Value&quot;:null,&quot;ddlRelatedDataSDProblem_Value_DDD_L&quot;:[],&quot;ddlRelatedDataSDProblem_Value&quot;:null,&quot;ddlInvestigatingOfficeCodeID_Value_DDD_L&quot;:[&quot;8840&quot;],&quot;ddlInvestigatingOfficeCodeID_Value&quot;:&quot;8840&quot;,&quot;ctllpInvestigatingOfficeInspector_DDD_L&quot;:[],&quot;ctllpInvestigatingOfficeInspector&quot;:null,&quot;ddlSigningRegionalOfficeCodeID_Value_DDD_L&quot;:[&quot;368&quot;],&quot;ddlSigningRegionalOfficeCodeID_Value&quot;:&quot;368&quot;}" RecordedValue="{&quot;ViolatorPhone_Value&quot;:null,&quot;ctllpViolatorDesignatorCode_DDD_L&quot;:[],&quot;ctllpViolatorDesignatorCode&quot;:null,&quot;ctllpAirmanCertificateNumber_DDD_L&quot;:[],&quot;ctllpAirmanCertificateNumber&quot;:null,&quot;ddlViolatorStateProvinceCode_Value_DDD_L&quot;:[],&quot;ddlViolatorStateProvinceCode_Value&quot;:null,&quot;ddlViolatorCountryCode_Value_DDD_L&quot;:[],&quot;ddlViolatorCountryCode_Value&quot;:null,&quot;ctllpViolatorAviationEmployerName_DDD_L&quot;:[],&quot;ctllpViolatorAviationEmployerName&quot;:null,&quot;ctllpEquipmentInvolvedModelCode_DDD_L&quot;:[],&quot;ctllpEquipmentInvolvedModelCode&quot;:null,&quot;ctllpEquipmentInvolvedOwnerDesignatorCode_DDD_L&quot;:[],&quot;ctllpEquipmentInvolvedOwnerDesignatorCode&quot;:null,&quot;ddlEquipmentInvolvedStateProvinceCode_Value_DDD_L&quot;:[],&quot;ddlEquipmentInvolvedStateProvinceCode_Value&quot;:null,&quot;ddlEquipmentInvolvedCountryCode_Value_DDD_L&quot;:[],&quot;ddlEquipmentInvolvedCountryCode_Value&quot;:null,&quot;ctllpViolationAirportCodeModel_DDD_L&quot;:[],&quot;ctllpViolationAirportCodeModel&quot;:null,&quot;ddlViolationStateProvinceCodeID_Value_DDD_L&quot;:[],&quot;ddlViolationStateProvinceCodeID_Value&quot;:null,&quot;ddlRelatedDataSDProblem_Value_DDD_L&quot;:[],&quot;ddlRelatedDataSDProblem_Value&quot;:null,&quot;ddlInvestigatingOfficeCodeID_Value_DDD_L&quot;:[&quot;8840&quot;],&quot;ddlInvestigatingOfficeCodeID_Value&quot;:&quot;8840&quot;,&quot;ctllpInvestigatingOfficeInspector_DDD_L&quot;:[],&quot;ctllpInvestigatingOfficeInspector&quot;:null,&quot;ddlSigningRegionalOfficeCodeID_Value_DDD_L&quot;:[&quot;368&quot;],&quot;ddlSigningRegionalOfficeCodeID_Value&quot;:&quot;368&quot;}" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="POST" Guid="a1efd54e-6ea4-41ba-8c85-66fe3a914224" Version="1.1" Url="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=ClosedEIRList.EIRListForReOpenNSave#csv.EIRNumber" />
+        <Header Name="accept" Value="*/*" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="EIRNo" Value="ClosedEIRList.EIRListForReOpenNSave#csv.EIRNumber" RecordedValue="4109079" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="Saved" Value="1" RecordedValue="1" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="ViolationDate" Value="9/1/2016" RecordedValue="9/1/2016" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+      <StringHttpBody ContentType="" InsertByteOrderMark="False">
+      </StringHttpBody>
+    </Request>
+    <Request Method="POST" Guid="75944ba2-12ba-48c4-8689-50bb2681cc06" Version="1.1" Url="{{EISWebServer}}/EIRManagement/EIRButtonStatus/" ThinkTime="3" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=ClosedEIRList.EIRListForReOpenNSave#csv.EIRNumber" />
+        <Header Name="accept" Value="application/json, text/javascript, */*; q=0.01" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <StringHttpBody ContentType="application/json; charset=utf-8" InsertByteOrderMark="False">ewAiAEUASQBTAEkAbgB2AGUAcwB0AGkAZwBhAHQAaQBvAG4ASQBkACIAOgAiAEMAbABvAHMAZQBkAEUASQBSAEwAaQBzAHQALgBFAEkAUgBMAGkAcwB0AEYAbwByAFIAZQBPAHAAZQBuAE4AUwBhAHYAZQAjAGMAcwB2AC4ARQBJAFIATgB1AG0AYgBlAHIAIgB9AA==</StringHttpBody>
+    </Request>
+    <Request Method="POST" Guid="f8259122-64be-4a63-9886-ba8079bd89a4" Version="1.1" Url="{{EISWebServer}}/EIRManagement/EIRButtonStatus/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="referer" Value="{{EISWebServer}}/EIRManagement/EnforcementInvestigativeReports?EIRNo=ClosedEIRList.EIRListForReOpenNSave#csv.EIRNumber" />
+        <Header Name="accept" Value="application/json, text/javascript, */*; q=0.01" />
+        <Header Name="x-requested-with" Value="XMLHttpRequest" />
+      </Headers>
+      <StringHttpBody ContentType="application/json; charset=utf-8" InsertByteOrderMark="False">ewAiAEUASQBTAEkAbgB2AGUAcwB0AGkAZwBhAHQAaQBvAG4ASQBkACIAOgAiAEMAbABvAHMAZQBkAEUASQBSAEwAaQBzAHQALgBFAEkAUgBMAGkAcwB0AEYAbwByAFIAZQBPAHAAZQBuAE4AUwBhAHYAZQAjAGMAcwB2AC4ARQBJAFIATgB1AG0AYgBlAHIAIgB9AA==</StringHttpBody>
+    </Request>
+  </Items>
+  <DataSources>
+    <DataSource Name="ClosedEIRList" Provider="Microsoft.VisualStudio.TestTools.DataSource.CSV" Connection="C:\Projects\Install\VisualStudio2015Projects\EIRListForReOpenNSave.csv">
+      <Tables>
+        <DataSourceTable Name="EIRListForReOpenNSave#csv" SelectColumns="SelectOnlyBoundColumns" AccessMethod="Sequential" />
+      </Tables>
+    </DataSource>
+  </DataSources>
+  <ContextParameters>
+    <ContextParameter Name="EISWebServer" Value="http://172.29.99.89:8888" />
+  </ContextParameters>
+  <ValidationRules>
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidateResponseUrl, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response URL" Description="Validates that the response URL after redirects are followed is the same as the recorded response URL.  QueryString parameters are ignored." Level="Low" ExectuionOrder="BeforeDependents" />
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleResponseTimeGoal, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response Time Goal" Description="Validates that the response time for the request is less than or equal to the response time goal as specified on the request.  Response time goals of zero will be ignored." Level="Low" ExectuionOrder="AfterDependents">
+      <RuleParameters>
+        <RuleParameter Name="Tolerance" Value="0" />
+      </RuleParameters>
+    </ValidationRule>
+  </ValidationRules>
+</WebTest>
